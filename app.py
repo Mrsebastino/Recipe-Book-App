@@ -6,6 +6,9 @@ if path.exists("env.py"):
 
 app = Flask(__name__)
 
+app.config["MONGO_DBNAME"] = 'recipe_book'
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+
 
 @app.route('/')
 def hello():
