@@ -1,8 +1,4 @@
-<html>
-  <head>
-    <title></title>
-  </head>
-  <body>
+{% extends 'base.html' %} {% block content %}
     {% for recipe in recipes %} 
     {{recipe.category_name}} 
     {{recipe.recipe_name}}
@@ -12,5 +8,4 @@
     {{recipe.method_name}}
     {{recipe.review_name}}
     {% endfor %}
-  </body>
-</html>
+{% endblock %} 
