@@ -1,0 +1,13 @@
+.nav-wrapper {
+    background-color: #ec753d;
+}
+
+.container-choice {
+    display: inline-flex;
+    justify-content: center;
+   
+}
+
+.category-choice, h5 {
+    padding-left: 5em;
+}

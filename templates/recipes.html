@@ -1,11 +1,15 @@
-{% extends 'base.html' %} {% block content %}
-    {% for recipe in recipes %} 
-    {{recipe.category_name}} 
-    {{recipe.recipe_name}}
-    {{recipe.seasonal_name}}
-    {{recipe.difficulty_name}}
-    {{recipe.ingredients_name}}
-    {{recipe.method_name}}
-    {{recipe.review_name}}
-    {% endfor %}
-{% endblock %} 
+{% extends 'base.html' %} {% block content %} 
+{% for cat in categories %}
+  <div class="container-choice">
+  <div class="row">
+    <h5 class="category-choice">{{cat.category_name}}</h5>
+  </div>
+  </div>
+{% endfor %}
+<div>
+  {% for recipe in recipes %} {{recipe.category_name}} {{recipe.recipe_name}}
+  {{recipe.seasonal_name}} {{recipe.difficulty_name}}
+  {{recipe.ingredients_name}} {{recipe.method_name}} {{recipe.review_name}}
+  {%endfor %}
+</div>
+{% endblock %}
