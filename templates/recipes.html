@@ -1,10 +1,15 @@
-{% extends 'base.html' %} {% block content %} 
+{% extends 'base.html' %} {% block content %}
 
-<div>
-  {% for recipe in recipes %} 
-  {{recipe.category_name}} {{recipe.recipe_name}}
-  {{recipe.seasonal_name}} {{recipe.difficulty_name}}
-  {{recipe.ingredients_name}} {{recipe.method_name}} {{recipe.review_name}}
-  {%endfor %}
+<div class = "bg-image">
+   <div class = "card-transparent z-depth-10">
+   <p>
+
+   </p>
+   </div>
 </div>
-{% endblock %}
+
+{% for recipe in recipes %} {{recipe.category_name}} {{recipe.recipe_name}}
+{{recipe.seasonal_name}} {{recipe.difficulty_name}} {{recipe.ingredients_name}}
+{{recipe.method_name}} {{recipe.review_name}}
+<!--<img class="responsive-img" src="{{recipe.image_link}} " />-->
+{%endfor %} {% endblock %}
