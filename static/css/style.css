@@ -1,15 +1,44 @@
+@import url("https://fonts.googleapis.com/css?family=Righteous:300,400,500,600,700|PT Mono:300,400,500");
 
+body {
+  background-color: #fcd450;
+}
 /*NavBar*/
 
 .nav-wrapper {
-  background-color: #cbf0f3;
+  background-color: #f59e13;
 }
 
 .material-icons {
   color: black;
 }
 
-nav ul a {
-    color: black;
+.brand-logo{
+    font-family:  "Righteous", sans-serif;
+    margin-left: 15px;
 }
 
+nav ul a {
+  color: black;
+  font-family: "PT Mono", sans-serif;
+}
+
+.dropdown-content li > a {
+    color:black;
+}
+
+/* home page*/
+.header {
+  font-family: "Righteous", sans-serif;
+  text-align: center;
+  font-weight: 800;
+  color: white;
+}
+
+.bg-image {
+  margin-top: 10px;
+  background-image: url("../images/veg-display.jpg");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+}
