@@ -1,13 +1,15 @@
+
+/*NavBar*/
+
 .nav-wrapper {
-    background-color: #ec753d;
+  background-color: #cbf0f3;
 }
 
-.container-choice {
-    display: inline-flex;
-    justify-content: center;
-   
+.material-icons {
+  color: black;
 }
 
-.category-choice, h5 {
-    padding-left: 5em;
+nav ul a {
+    color: black;
 }
+
