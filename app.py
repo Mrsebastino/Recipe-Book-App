@@ -20,6 +20,11 @@ def home():
     return render_template("index.html")
 
 
+@app.route('/mains')
+def mains():
+    return render_template("main.html")
+
+
 @app.route('/add_recipes')
 def add_recipes():
     return render_template("add_recipes.html", recipes=mongo.db.recipes.find(),

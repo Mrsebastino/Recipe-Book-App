@@ -21,7 +21,7 @@
   </head>
   <header>
     <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">Mains</a></li>
+      <li><a href="{{url_for('mains')}}">Mains</a></li>
       <li><a href="#!">Starters</a></li>
       <li><a href="#!">Desserts</a></li>
     </ul>
@@ -52,15 +52,13 @@
     </nav>
   </header>
   <body>
-    
-          {% block content %} {% endblock %}
-       
-    
+    {% block content %} {% endblock %}
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!--Javascript taking fom Materialize to implement Navbar-->
     <script type="text/javascript">
       $(document).ready(function () {
+          <!--Javascript from Materialze for Navbar-->
         $(".sidenav").sidenav();
         $(".dropdown-trigger").dropdown();
       });
