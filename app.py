@@ -20,9 +20,17 @@ def home():
     return render_template("index.html")
 
 
-@app.route('/mains')
+@app.route('/mains', methods=['POST', 'GET'])
 def mains():
-    return render_template("main.html")
+    """
+    if request.method == 'POST':
+        pass
+    else:
+        return render_template("main.html")
+
+    """
+    return render_template('/main.html', recipes=mongo.db.recipes.find(),
+                           categories=mongo.db.categories.find())
 
 
 @app.route('/add_recipes')
