@@ -46,9 +46,9 @@ nav ul a {
 /* Recipe card. might need to rethink layout? use flex? */
 .card-recipe{
     margin-left: 15em;
+    line-height: auto;
 }
 
 .card-content, .card-title{
     font-family: "Righteous", sans-serif;
-
 }
