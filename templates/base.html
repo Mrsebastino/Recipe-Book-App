@@ -14,6 +14,10 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="{{url_for('static', filename='css/style.css')}}"
       type="text/css"
     />
@@ -53,6 +57,42 @@
   </header>
   <body>
     {% block content %} {% endblock %}
+
+    <footer>
+      <div class="page-footer container">
+        <div class="row">
+          <div class="copyright-box col l6 s12">
+            <a class="logo-footer" href="{{url_for('home')}}"
+              ><span>Home Cooking</span></a
+            >
+          </div>
+          <div class="col l6 offset-6 s12">
+            <ul class="list-inline social-link">
+              <li class="list-inline-item">
+                <a
+                  href="https://www.facebook.com"
+                  aria-label="Facebook"
+                  target="_blank"
+                  ><i class="fab fa-facebook" rel="noopener"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com"
+                  aria-label="Instagram"
+                  target="_blank"
+                  ><i class="fab fa-instagram" rel="noopener"></i
+                ></a>
+                <a
+                  href="https://www.twitter.com"
+                  aria-label="Twitter"
+                  target="_blank"
+                  ><i class="fab fa-twitter" rel="noopener"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
