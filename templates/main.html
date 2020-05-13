@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col l8">
+    <div class="col m8">
       <div class="card medium card-recipe">
         {% for recipe in recipes %}
         <div class="card-image waves-effect waves-block waves-light">
@@ -18,18 +18,22 @@
           <p>Diffilculty: {{recipe.difficulty_name}}</p>
           <p>Review: {{recipe.review_name}}</p>
         </div>
-       
+
         <div class="card-reveal">
           <span class="card-title text-darken-4"
             >Ingredients<i class="material-icons right">close</i></span
           >
-          <ul>
-            <li></li>
-            {% endfor %}
-          </ul>
-          <p><a href="#">This is a link</a></p>
+          <li>{{recipe.ingredients_name[0]}}</li>
+          <li>{{recipe.ingredients_name[1]}}</li>
+          <li>{{recipe.ingredients_name[2]}}</li>
+          <span class="card-title text-darken-4">Method</span>
+          <li>{{recipe.method_name[0]}}</li>
+          <li>{{recipe.method_name[1]}}</li>
+          <li>{{recipe.method_name[2]}}</li>
+          <p><a href="{{url_for('')}}">Equipments Required</a></p>
         </div>
       </div>
+      {% endfor %}
     </div>
   </div>
 </div>
