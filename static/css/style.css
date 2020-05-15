@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Righteous:300,400,500,600,700|PT Mono:300,400,500");
 
 body {
-  background-color: #fcd450;
+  background-color: #f4e5acd3;
 }
+
 /*NavBar*/
 
 .nav-wrapper {
@@ -35,12 +36,39 @@ nav ul a {
   color: white;
 }
 
-.bg-image {
+.bg-image-landing {
   margin-top: 10px;
   background-image: url("../images/veg-display.jpg");
   background-repeat: no-repeat;
   height: 100vh;
   background-size: cover;
+}
+
+/*Add recipe Page*/
+
+.container-add-recipe {
+  height: auto;
+  width: 900px;
+  border-style: ridge;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #f9ce7c;
+}
+
+.header-add-recipe {
+  font-family: "Righteous", sans-serif;
+  text-align: center;
+  font-weight: 800;
+  color: black;
+}
+
+.btn-add-recipe {
+  margin-left: 30px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #20cd04;
 }
 
 /* Recipe card. might need to rethink layout? use flex? */
@@ -56,9 +84,10 @@ nav ul a {
 
 /*Footer*/
 .page-footer {
-  position: fixed;
+  display: flex;
   background-color: #f59e13;
   height: 100px;
+  flex-direction: column;
   width: 100%;
   max-width: none;
   bottom: 0;
