@@ -24,11 +24,6 @@
     <title>Family Recipes</title>
   </head>
   <header>
-    <ul id="dropdown1" class="dropdown-content">
-      <li><a href="{{url_for('mains')}}">Mains</a></li>
-      <li><a href="#!">Starters</a></li>
-      <li><a href="#!">Desserts</a></li>
-    </ul>
     <nav>
       <div class="nav-wrapper">
         <a href="{{url_for('home')}}" class="brand-logo black-text"
@@ -38,18 +33,15 @@
           ><i class="material-icons">menu</i></a
         >
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="{{url_for('add_recipes')}}">Add Recipe</a></li>
-          <li><a href="">Equipment</a></li>
-          <li>
-            <a class="dropdown-trigger" href="#!" data-target="dropdown1"
-              >Browse<i class="material-icons right">arrow_drop_down</i></a
-            >
-          </li>
+          <li><a href="{{url_for('add_recipes')}}"><i class="fas fa-edit small-nav-icon"></i>Add Recipe</a></li>
+          <li><a href="our_recipes/"><i class="fas fa-archive small-nav-icon"></i>Our Recipes</a></li>
+          <li><a href="{{url_for('equipments_list')}}"><i class="fas fa-mitten small-nav-icon"></i>Equipment</a></li>
           <li><a href="">Sign in</a></li>
         </ul>
         <ul class="sidenav" id="mobile-demo">
-          <li><a href="">Add Recipe</a></li>
-          <li><a href="">Equipment</a></li>
+          <li><a href=""><i class="fas fa-edit small-nav-icon"></i>Add Recipe</a></li>
+          <li><a href=""><i class="fas fa-archive small-nav-icon"></i>Our Recipe</a></li>
+           <li><a href=""><i class="fas fa-mitten small-nav-icon"></i>Equipment</a></li>
           <li><a href="">Sign in</a></li>
         </ul>
       </div>
@@ -62,7 +54,7 @@
       <div class="page-footer container">
         <div class="row">
           <div class="copyright-box col l6 s12">
-            <a class="logo-footer" href="{{url_for('home')}}"
+            <a class="logo-footer brand-logo" href="{{url_for('home')}}"
               ><span>Home Cooking</span></a
             >
           </div>
@@ -101,6 +93,7 @@
       <!--Javascript from Materialze for Navbar-->
               $(".sidenav").sidenav();
               $(".dropdown-trigger").dropdown();
+              $('select').formSelect();
             });
     </script>
   </body>
