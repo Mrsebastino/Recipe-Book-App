@@ -46,9 +46,9 @@ nav ul a {
 
 /*Add recipe Page*/
 
-.container-add-recipe {
+.add-recipe {
   height: auto;
-  width: 900px;
+  width: fit-content;
   border-style: ridge;
   border-radius: 20px;
   margin: auto;
@@ -71,6 +71,10 @@ nav ul a {
   background-color: #20cd04;
 }
 
+::placeholder {
+  color: black;
+}
+
 /* Recipe card. might need to rethink layout? use flex? */
 .card-recipe {
   margin-left: 15em;
@@ -86,13 +90,15 @@ nav ul a {
 .page-footer {
   display: flex;
   background-color: #f59e13;
-  height: 100px;
+  min-height: 100px;
   flex-direction: column;
   width: 100%;
+  margin-bottom: ;
   max-width: none;
-  bottom: 0;
   text-align: center;
 }
+
+
 copyright-box {
   padding: 2 0.75em;
 }
