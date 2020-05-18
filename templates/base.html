@@ -39,16 +39,18 @@
           <li><a href="">Sign in</a></li>
         </ul>
         <ul class="sidenav" id="mobile-demo">
-          <li><a href=""><i class="fas fa-edit small-nav-icon"></i>Add Recipe</a></li>
-          <li><a href=""><i class="fas fa-archive small-nav-icon"></i>Our Recipe</a></li>
-           <li><a href=""><i class="fas fa-mitten small-nav-icon"></i>Equipment</a></li>
+          <li><a href="{{url_for('add_recipes')}}"><i class="fas fa-edit small-nav-icon"></i>Add Recipe</a></li>
+          <li><a href="{{url_for('our_recipes')}}"><i class="fas fa-archive small-nav-icon"></i>Our Recipe</a></li>
+           <li><a href="{{url_for('equipments_list')}}"><i class="fas fa-mitten small-nav-icon"></i>Equipment</a></li>
           <li><a href="">Sign in</a></li>
         </ul>
       </div>
     </nav>
   </header>
   <body>
+
     {% block content %} {% endblock %}
+
 
     <footer>
       <div class="page-footer container">
