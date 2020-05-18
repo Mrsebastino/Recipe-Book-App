@@ -1,117 +1,159 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container-add-recipe">
-  <div class="col">
-    <h3 class="header-add-recipe">{{ page_title  }}</h3>
-  </div>
-
+<div class="container add-recipe">
   <div class="row">
-    <form action="{{url_for('insert_recipe')}}" method="POST" class="col s12" name="addRecipe" id="addRecipe">
-      <!--Meal Category-->
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="fas fa-list-alt prefix"></i>
-          <select id="category_name" name="category_name">
-            <option value="" disabled selected>Choose type of meal</option>
-            <!--Provide categories from DB-->
-            {% for category in categories %}
-            <option value="{{category.category_name}}"
-              >{{category.category_name}}</option>
-            {% endfor %}
+    <div class="col col s12">
+      <h3 class="header-add-recipe">{{ page_title }}</h3>
+    </div>
 
-          </select>
-          <label>Category</label>
-        </div>
-      </div>
-      <!--Recipe name-->
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="far fa-file-alt prefix"></i>
-          <input
-            id="recipe_name"
-            name="recipe_name"
-            type="text"
-            class="validate"
-          />
-          <label>Recipe Name</label>
-        </div>
-      </div>
-      <!--Recipe difficulty-->
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="fas fa-unlock prefix"></i>
-          <input
-            id="difficulty_name"
-            name="difficulty_name"
-            type="text"
-            class="validate"
-          />
-          <label for="icon_telephone">Difficulty</label>
-        </div>
-      </div>
-
-      <!--Serving-->
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="fas fa-user-friends prefix"></i>
-          <input
-            id="serve_name"
-            name="serve_name"
-            type="text"
-            class="validate"
-          />
-          <label for="icon_telephone">Serving</label>
-        </div>
-      </div>
-      <!--Recipe Review-->
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="fas fa-comment prefix"></i>
-          <input
-            id="review_name"
-            name="review_name"
-            type="text"
-            class="validate"
-          />
-          <label for="icon_telephone">Review</label>
-        </div>
-      </div>
-      <!--Recipe Ingredients-->
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="fas fa-shopping-basket prefix"></i>
-          <textarea
-            id="ingredients_name"
-            name="ingredients_name"
-            type="text"
-            class="materialize-textarea"
-          ></textarea>
-          <label for="icon_telephone">Ingredient</label>
-        </div>
-      </div>
-      <!--Method-->
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="fas fa-utensil-spoon prefix"></i>
-          <textarea
-            id="method_name"
-            name="method_name"
-            type="text"
-            class="materialize-textarea"
-          ></textarea>
-          <label for="icon_telephone">Method</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <button
-          class="btn-add-recipe waves-effect waves-light"
-          type="submit"
-          name="action"
+    <div class="row">
+      <div class="col s12 m6 l6">
+        <form
+          action="{{ url_for('insert_recipe') }}"
+          method="POST"
+          class="col s12"
+          name="addRecipe"
+          id="addRecipe"
+          type="text"
         >
-          Add Recipe
-        </button>
+          <!--Meal Category-->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="fas fa-list-alt prefix"></i>
+              <select id="category_name" name="category_name">
+                <option value="" disabled selected>Choose type of meal</option>
+                <!--Provide categories from DB-->
+                {% for category in categories %}
+                <option value="{{ category.category_name }}"
+                  >{{category.category_name}}</option
+                >
+                {% endfor %}
+              </select>
+              <label>Category</label>
+            </div>
+          </div>
+          <!--Recipe name-->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="far fa-file-alt prefix"></i>
+              <input
+                name="recipe_name"
+                id="recipe_name"
+                type="text"
+                class="validate"
+                value="{{recipe_name}}"
+              />
+              <label>Recipe Name</label>
+            </div>
+          </div>
+          <!--Recipe difficulty-->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="fas fa-unlock prefix"></i>
+              <input
+                name="difficulty_name"
+                id="difficulty_name"
+                type="text"
+                class="validate"
+              />
+              <label>Difficulty</label>
+            </div>
+          </div>
+
+          <!--Serving-->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="fas fa-user-friends prefix"></i>
+              <input
+                id="serve_name"
+                name="serve_name"
+                type="text"
+                class="validate"
+              />
+              <label>Serving</label>
+            </div>
+          </div>
+          <!--Recipe Review-->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="fas fa-comment prefix"></i>
+              <input
+                id="review_name"
+                name="review_name"
+                type="text"
+                class="validate"
+              />
+              <label>Review</label>
+            </div>
+          </div>
+          <!--Recipe Ingredients-->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="fas fa-shopping-basket prefix"></i>
+              <textarea
+                id="ingredients_name"
+                name="ingredients_name"
+                type="text"
+                placeholder="Insert all ingredients on a new line"
+                class="materialize-textarea"
+              ></textarea>
+              <label>Ingredient</label>
+            </div>
+          </div>
+          <!--Method-->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="fas fa-utensil-spoon prefix"></i>
+              <textarea
+                id="method_name"
+                name="method_name"
+                type="text"
+                placeholder="Insert each steps on a new line"
+                class="materialize-textarea"
+              ></textarea>
+              <label>Method</label>
+            </div>
+          </div>
+          <!--Equipments-->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="fas fa-utensil-spoon prefix"></i>
+              <textarea
+                id="equipments_name"
+                name="equipments_name"
+                type="text"
+                placeholder="Insert each steps on a new line"
+                class="materialize-textarea"
+              ></textarea>
+              <label>Equipment</label>
+            </div>
+          </div>
+          <!--Images-->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="fas fa-camera-retro prefix"></i>
+              <input
+                id="image_link"
+                name="image_link"
+                type="text"
+                placeholder="Insert your URL here"
+                class="validate"
+              />
+              <label>Image</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <button
+              class="btn-add-recipe waves-effect waves-light"
+              type="submit"
+              name="action"
+            >
+              Add Recipe
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   </div>
 </div>
 {% endblock %}
