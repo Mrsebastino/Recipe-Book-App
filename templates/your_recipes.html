@@ -1,9 +1,15 @@
-{% extends 'base.html' %} {% block content %} {% for recipe in recipes %}
+{% extends 'base.html' %} {% block content %} 
+<div class="row">
+  <div class="col s12">
+    <h3 class="header-add-recipe">{{ page_title }}</h3>
+  </div>
+</div>
+{% for recipe in recipes %}
 <div class="row">
   <div class="col s12 m6">
     <div class="card medium card-recipe">
       <div class="card-image white-text">
-        <img class="activator" src="{{recipe.image_link}}" />
+        <img class="activator" src="{{image_link}}" />
       </div>
 
       <div class="card-content">
@@ -12,7 +18,7 @@
             >more_vert</i
           ></span
         >
-        <p>Category: {{recipe.category_name}}</p>
+        <p>Category: {{ recipe.category_name }}</p>
         <p>Diffilculty: {{ recipe.difficulty_name }}</p>
         <p>Review: {{ recipe.review_name }}</p>
         <p>Serve: {{ recipe.serve_name }}</p>
@@ -21,18 +27,17 @@
       <div class="card-reveal">
         <span class="card-title text-darken-4"
           >Ingredients<i class="material-icons right">close</i></span
-        >
-        <li>{{ recipe.ingredients_name[0] }}</li>
-        <li>{{ recipe.ingredients_name[1] }}</li>
-        <li>{{ recipe.ingredients_name[2] }}</li>
+        > 
+       
+          
         <span class="card-title text-darken-4">Instructions</span>
+        
         <p>
-        <li>{{ recipe.instructions_name[1]}}</li>
-        <li>{{ recipe.instructions_name[1]}}</li>
-        <li>{{ recipe.instructions_name[2]}}</li>
+       
+        
           <a href="{{url_for('equipments_list')}}">Equipments Required</a>
         </p>
-        {% endfor %}
+    {% endfor %}
       </div>
     </div>
   </div>
