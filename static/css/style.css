@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Righteous:300,400,500,600,700|PT Mono:300,400,500");
 
 body {
-  background-color: #f4e5acd3;
+  background-color: #f6f5f1d3;
 }
 
 /*NavBar*/
 
 .nav-wrapper {
-  background-color: #f59e13;
+  background-color: #cbcac7;
 }
 
 .material-icons {
@@ -54,7 +54,7 @@ nav ul a {
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #f9ce7c;
+  background-color: #f6f5f1d3;
 }
 
 .header-add-recipe {
@@ -89,22 +89,23 @@ nav ul a {
 /*Footer*/
 .page-footer {
   display: flex;
-  background-color: #f59e13;
+  background-color: #cbcac7;
   min-height: 100px;
   flex-direction: column;
   width: 100%;
-  margin-bottom: ;
   max-width: none;
   text-align: center;
+  webkit-box-shadow: 2px 3px 3px 3px rgb(45, 45, 45);  
+  -moz-box-shadow:    2px 3px 3px 3px rgb(45, 45, 45); 
+  box-shadow:         2px 3px 3px 3px rgb(45, 45, 45);
 }
-
 
 copyright-box {
   padding: 2 0.75em;
 }
 
 a.logo-footer {
-  color: #ffffff;
+  color: black;
   font-weight: 500;
   font-size: 25px;
   text-decoration: none;
@@ -130,7 +131,7 @@ a.logo-footer {
   font-size: 20px;
   margin-top: 0;
   margin-bottom: 10px;
-  color: #8f8a8c;
+  color: black;
   background-color: #ffffff;
   transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -140,5 +141,5 @@ a.logo-footer {
 
 .fab:hover {
   text-decoration: none;
-  background-color: #d1cece;
+  background-color: #cbcac7;
 }
