@@ -22,14 +22,18 @@
         <span class="card-title text-darken-4"
           >Ingredients<i class="material-icons right">close</i></span
         >
+        <ul>
         <li>{{ recipe.ingredients_name[0] }}</li>
         <li>{{ recipe.ingredients_name[1] }}</li>
         <li>{{ recipe.ingredients_name[2] }}</li>
+        </ul>
         <span class="card-title text-darken-4">Instructions</span>
         <p>
+        <ul>
         <li>{{ recipe.instructions_name[1]}}</li>
         <li>{{ recipe.instructions_name[1]}}</li>
         <li>{{ recipe.instructions_name[2]}}</li>
+        </ul>
           <a href="{{url_for('equipments_list')}}">Equipments Required</a>
         </p>
         {% endfor %}
