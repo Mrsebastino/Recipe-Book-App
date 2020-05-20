@@ -1,43 +1,46 @@
-{% extends 'base.html' %} {% block content %} 
+{% extends 'base.html' %} {% block content %}
 <div class="row">
   <div class="col s12">
     <h3 class="header-add-recipe">{{ page_title }}</h3>
   </div>
 </div>
-{% for recipe in recipes %}
 <div class="row">
   <div class="col s12 m6">
     <div class="card medium card-recipe">
       <div class="card-image white-text">
-        <img class="activator" src="{{image_link}}" />
+        <img class="activator" src="{{recipes.image_link}}" />
       </div>
 
       <div class="card-content">
         <span class="card-title activator text-darken-4"
-          >{{ recipe.recipe_name }}<i class="material-icons right"
+          >{{ recipes.recipe_name }}<i class="material-icons right"
             >more_vert</i
           ></span
         >
-        <p>Category: {{ recipe.category_name }}</p>
-        <p>Diffilculty: {{ recipe.difficulty_name }}</p>
-        <p>Review: {{ recipe.review_name }}</p>
-        <p>Serve: {{ recipe.serve_name }}</p>
+        <p>Category: {{ recipes.category_name }}</p>
+        <p>Diffilculty: {{ recipes.difficulty_name }}</p>
+        <p>Review: {{ recipes.review_name }}</p>
+        <p>Serve: {{ recipes.serve_name }}</p>
       </div>
 
       <div class="card-reveal">
         <span class="card-title text-darken-4"
           >Ingredients<i class="material-icons right">close</i></span
-        > 
-       
-          
+        >
+        <ul>
+          <li>{{ recipes.ingredients_name[0] }}</li>
+          <li>{{ recipes.ingredients_name[1] }}</li>
+          <li>{{ recipes.ingredients_name[2] }}</li>
+        </ul>
+
         <span class="card-title text-darken-4">Instructions</span>
-        
-        <p>
-       
-        
-          <a href="{{url_for('equipments_list')}}">Equipments Required</a>
-        </p>
-    {% endfor %}
+        <ul>
+          <li>{{ recipes.instructions_name[0] }}</li>
+          <li>{{ recipes.instructions_name[1] }}</li>
+          <li>{{ recipes.instructions_name[2] }}</li>
+        </ul>
+
+        <a href="{{url_for('equipments_list')}}">Equipments Required</a>
       </div>
     </div>
   </div>
