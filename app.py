@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 
 # DB URI for local workspace
@@ -29,9 +29,10 @@ def home():
 @app.route('/our_recipes')
 def our_recipes():
     the_recipe = mongo.db.recipes.find()
+
     return render_template('our_recipes.html', recipes=the_recipe)
 
-# Route to  add recipe
+# Route to  add recipe form
 
 
 @app.route('/add_recipes')
@@ -46,6 +47,8 @@ def your_recipes(recipes_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     return render_template("your_recipes.html", recipes=the_recipe, page_title="Your Recipe")
 
+# Route to take our data from ad recipe form and display in your recipe
+
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -54,7 +57,6 @@ def insert_recipe():
 
     ingredients_list = form_data["ingredients_name"].split("\n")
     instructions_list = form_data["instructions_name"].split("\n")
-    equipments_list = form_data["equipments_name"].split("\n")
 
     the_recipe = recipes.insert_one(
         {
@@ -64,7 +66,7 @@ def insert_recipe():
             "serve_name": form_data["serve_name"],
             "ingredients_name": ingredients_list,
             "instructions_name": instructions_list,
-            "equipments_name": equipments_list,
+            "image_link": form_data["image_link"]
 
         }
     )
@@ -74,8 +76,8 @@ def insert_recipe():
 
 @app.route('/equipments_list')
 def equipments_list():
-    all_recipes = mongo.db.recipes.find()
-    return render_template("equipment.html", recipes=all_recipes)
+    all_equipments = mongo.db.equipments.find()
+    return render_template("equipment.html", equipments=all_equipments)
 
 
 if __name__ == '__main__':
