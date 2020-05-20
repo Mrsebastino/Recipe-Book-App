@@ -6,7 +6,7 @@
 </div>
 <div class="row">
   <div class="col s12 m6">
-    <div class="card medium card-recipe">
+    <div class="card medium card-recipe hoverable">
       <div class="card-image white-text">
         <img class="activator" src="{{recipes.image_link}}" />
       </div>
@@ -39,8 +39,6 @@
           <li>{{ recipes.instructions_name[1] }}</li>
           <li>{{ recipes.instructions_name[2] }}</li>
         </ul>
-
-        <a href="{{url_for('equipments_list')}}">Equipments Required</a>
       </div>
     </div>
   </div>
