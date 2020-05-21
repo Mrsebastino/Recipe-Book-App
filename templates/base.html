@@ -48,14 +48,16 @@
     </nav>
   </header>
   <body>
-
+  <!--The container class serves in all HTML for the materialize grid systems-->
+<div class="container">
     {% block content %} {% endblock %}
 
-
+</div>
+<!--Footer taken from my last project and redigned-->
     <footer>
       <div class="page-footer container">
         <div class="row">
-          <div class="copyright-box col l6 s12">
+          <div class="col l6 s12">
             <a class="logo-footer brand-logo" href="{{url_for('home')}}"
               ><span>Home Cooking</span></a
             >
@@ -94,7 +96,7 @@
             $(document).ready(function () {
       <!--Javascript from Materialze for Navbar-->
               $(".sidenav").sidenav();
-              $(".dropdown-trigger").dropdown();
+       <!--From Materialze for the select category-->  
               $('select').formSelect();
             });
     </script>
