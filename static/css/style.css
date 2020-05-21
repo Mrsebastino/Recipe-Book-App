@@ -76,10 +76,6 @@ nav ul a {
 }
 
 /* Recipe card. might need to rethink layout? use flex? */
-.card-recipe {
-  margin-left: 15em;
-  line-height: auto;
-}
 
 .card-content,
 .card-title {
@@ -88,6 +84,7 @@ nav ul a {
 
 /*Footer*/
 .page-footer {
+  margin-top: 15px;
   display: flex;
   background-color: #cbcac7;
   min-height: 100px;
@@ -95,13 +92,9 @@ nav ul a {
   width: 100%;
   max-width: none;
   text-align: center;
-  webkit-box-shadow: 2px 3px 3px 3px rgb(45, 45, 45);  
-  -moz-box-shadow:    2px 3px 3px 3px rgb(45, 45, 45); 
-  box-shadow:         2px 3px 3px 3px rgb(45, 45, 45);
-}
-
-copyright-box {
-  padding: 2 0.75em;
+  webkit-box-shadow: 2px 3px 3px 3px rgb(45, 45, 45);
+  -moz-box-shadow: 2px 3px 3px 3px rgb(45, 45, 45);
+  box-shadow: 2px 3px 3px 3px rgb(45, 45, 45);
 }
 
 a.logo-footer {
