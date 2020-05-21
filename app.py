@@ -63,6 +63,7 @@ def insert_recipe():
             "category_name": form_data["category_name"],
             "recipe_name": form_data["recipe_name"],
             "difficulty_name": form_data["difficulty_name"],
+            "review_name": form_data["review_name"],
             "serve_name": form_data["serve_name"],
             "ingredients_name": ingredients_list,
             "instructions_name": instructions_list,
