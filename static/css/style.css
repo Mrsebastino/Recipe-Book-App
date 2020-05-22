@@ -1,14 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Righteous:300,400,500,600,700|PT Mono:300,400,500");
 
 body {
-  background-color: #f6f5f1d3;
-
+  background-color: #ffffff;
 }
 
 /*NavBar*/
 
 .nav-wrapper {
-  background-color: #cbcac7;
+  background-color: #696969;
 }
 
 .material-icons {
@@ -21,7 +20,7 @@ body {
 }
 
 nav ul a {
-  color: black;
+  color: whitesmoke;
   font-family: "PT Mono", sans-serif;
 }
 
@@ -79,8 +78,8 @@ nav ul a {
 
 /* Recipe card */
 
-div.row::after {
-    display: inline;
+div.recipe-detail.row::after {
+  display: inline;
 }
 
 .card-content,
@@ -93,7 +92,7 @@ div.row::after {
 .page-footer {
   margin-top: 15px;
   display: flex;
-  background-color: #cbcac7;
+  background-color: #696969;
   min-height: 100px;
   flex-direction: column;
   width: 100%;
@@ -105,7 +104,7 @@ div.row::after {
 }
 
 a.logo-footer {
-  color: black;
+  color: whitesmoke;
   font-weight: 500;
   font-size: 25px;
   text-decoration: none;
@@ -118,7 +117,7 @@ a.logo-footer {
 .logo-footer:hover {
   font-size: 30px;
   text-decoration: none;
-  color: #ffffff;
+  color: black;
 }
 
 .fab {
@@ -132,7 +131,7 @@ a.logo-footer {
   margin-top: 0;
   margin-bottom: 10px;
   color: black;
-  background-color: #ffffff;
+  background-color: whitesmoke;
   transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
@@ -141,5 +140,5 @@ a.logo-footer {
 
 .fab:hover {
   text-decoration: none;
-  background-color: #cbcac7;
+  background-color: #696969;
 }
