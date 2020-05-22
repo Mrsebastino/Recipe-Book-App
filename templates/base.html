@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+     <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -21,37 +22,61 @@
       href="{{url_for('static', filename='css/style.css')}}"
       type="text/css"
     />
-    <title>Family Recipes</title>
+    <title>Home Cooking</title>
   </head>
   <header>
     <nav>
       <div class="nav-wrapper">
-        <a href="{{url_for('home')}}" class="brand-logo black-text"
+        <a href="{{url_for('home')}}" class="brand-logo whitesmoke-text"
           >Home Cooking</a
         >
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"
           ><i class="material-icons">menu</i></a
         >
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="{{url_for('add_recipes')}}"><i class="fas fa-edit small-nav-icon"></i>Add Recipe</a></li>
-          <li><a href="{{url_for('our_recipes')}}"><i class="fas fa-archive small-nav-icon"></i>Our Recipes</a></li>
-          <li><a href="{{url_for('equipments_list')}}"><i class="fas fa-mitten small-nav-icon"></i>Equipment</a></li>
+          <li>
+            <a href="{{url_for('add_recipes')}}"
+              ><i class="fas fa-edit small-nav-icon"></i>Add Recipe</a
+            >
+          </li>
+          <li>
+            <a href="{{url_for('our_recipes')}}"
+              ><i class="fas fa-archive small-nav-icon"></i>Our Recipes</a
+            >
+          </li>
+          <li>
+            <a href="{{url_for('equipments_list')}}"
+              ><i class="fas fa-mitten small-nav-icon"></i>Equipment</a
+            >
+          </li>
           <li><a href="">Sign in</a></li>
         </ul>
         <ul class="sidenav" id="mobile-demo">
-          <li><a href="{{url_for('add_recipes')}}"><i class="fas fa-edit small-nav-icon"></i>Add Recipe</a></li>
-          <li><a href="{{url_for('our_recipes')}}"><i class="fas fa-archive small-nav-icon"></i>Our Recipe</a></li>
-           <li><a href="{{url_for('equipments_list')}}"><i class="fas fa-mitten small-nav-icon"></i>Equipment</a></li>
+          <li>
+            <a href="{{url_for('add_recipes')}}"
+              ><i class="fas fa-edit small-nav-icon"></i>Add Recipe</a
+            >
+          </li>
+          <li>
+            <a href="{{url_for('our_recipes')}}"
+              ><i class="fas fa-archive small-nav-icon"></i>Our Recipe</a
+            >
+          </li>
+          <li>
+            <a href="{{url_for('equipments_list')}}"
+              ><i class="fas fa-mitten small-nav-icon"></i>Equipment</a
+            >
+          </li>
           <li><a href="">Sign in</a></li>
         </ul>
       </div>
     </nav>
   </header>
   <body>
-  <!--The container class serves in all HTML for the materialize grid systems-->
-<div class="container">
-    {% block content %} {% endblock %}
-</div>
+<!--The container class serves in all HTML for the materialize grid systems-->
+    <div class="container">
+      {% block content %} {% endblock %}
+    </div>
 <!--Footer taken from my last project and redigned-->
     <footer>
       <div class="page-footer container">
@@ -95,7 +120,7 @@
             $(document).ready(function () {
       <!--Javascript from Materialze for Navbar-->
               $(".sidenav").sidenav();
-       <!--From Materialze for the select category-->  
+       <!--From Materialze for the select category-->
               $('select').formSelect();
             });
     </script>
