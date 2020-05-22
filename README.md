@@ -48,7 +48,18 @@ Click here for a live Demo
 
 ### Testing
 
-### Deployment
+## Deployment
+---
+### Local Deployment
+To run this project you will need the following installed:
+* An IDE. My prfered IDE for this project was [GitPod](https://www.gitpod.io/)
+* [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+* [PIP](https://pip.pypa.io/en/stable/installing/)
+* [Python](https://www.python.org/) If you use a Mac Python comes pre installed.
+
+#### Directions
+1. You can clone this repository directly into you editor by pasting the following command into the terminal:https://github.com/Mrsebastino/MS3-RecipeBook.git
+Or you can save a copy of this directory by clicking the green button " Clone or download" then "Download Zip" and after that extract the Zip file to your folder.
 
 ## Credits
 
