@@ -73,6 +73,36 @@ def insert_recipe():
     )
 
     return redirect(url_for('your_recipes', recipes_id=the_recipe.inserted_id))
+# Route to Edit
+
+
+@app.route('/edit_recipe/<recipes_id>')
+def edit_recipe(recipes_id):
+    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    all_recipes = mongo.db.recipes.find()
+    return render_template('edit_recipes.html', recipe=the_recipe, recipes=all_recipes, page_title="Edit Recipe")
+
+
+@app.route('/update_recipe/<recipes_id>',  methods=["POST"])
+def update_recipe(recipes_id):
+    recipes = mongo.db.recipes
+    form_data = request.form.to_dict()
+
+    ingredients_list = form_data["ingredients_name"].split("\n")
+    instructions_list = form_data["instructions_name"].split("\n")
+
+    recipes.update(
+        {"_id": ObjectId(recipes_id)},
+        {
+            "recipe_name": form_data["recipe_name"],
+            "difficulty_name": form_data["difficulty_name"],
+            "review_name": form_data["review_name"],
+            "serve_name": form_data["serve_name"],
+            "ingredients_name": ingredients_list,
+            "instructions_name": instructions_list,
+            "image_link": form_data["image_link"]
+         })
+    return redirect(url_for('our_recipes'))
 
 
 @app.route('/equipments_list')
