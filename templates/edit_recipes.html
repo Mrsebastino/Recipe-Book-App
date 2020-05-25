@@ -15,25 +15,21 @@
           id="editRecipe"
           type="text"
         >
-          <!--Meal Category-->
+           <!--Meal Category-->
           <div class="row">
             <div class="input-field col s12">
               <i class="fas fa-list-alt prefix"></i>
-              <select id="category_name" name="category_name">
-                <option value="" disabled selected>Choose type of meal</option>
-                {% for category in categories %} {% if category.category_name ==
-                recipe_id.category_name %}
-                <option value="{{ category.category_name }}" selected
-                  >{{category.category_name}}</option
-                >
-                {% else %}
+              <select required>
+                <option value="" disabled selected id="category_name" name="category_name">Choose type of meal</option>
+                <!--Provide categories from DB-->
+                {% for category in categories %}
                 <option value="{{ category.category_name }}"
                   >{{category.category_name}}</option
                 >
-                {% endif %}{% endfor %}
+                {% endfor %}
               </select>
               <label>Category</label>
-            </div>
+            </div>  
           </div>
           <!--Recipe name-->
           <div class="row">
