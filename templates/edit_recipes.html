@@ -15,21 +15,26 @@
           id="editRecipe"
           type="text"
         >
-           <!--Meal Category-->
+          <!--Meal Category-->
           <div class="row">
             <div class="input-field col s12">
               <i class="fas fa-list-alt prefix"></i>
-              <select required>
-                <option value="" disabled selected id="category_name" name="category_name">Choose type of meal</option>
+              <select id="category_name" name="category_name">
+                <option value="" disabled selected>Choose type of meal</option>
                 <!--Provide categories from DB-->
-                {% for category in categories %}
+                {% for category in categories %} {% if category.category_name ==
+                recipe.category_name %}
+                <option value="{{ category.category_name }}" selected
+                  >{{category.category_name}}</option
+                >
+                {% else %}
                 <option value="{{ category.category_name }}"
                   >{{category.category_name}}</option
                 >
-                {% endfor %}
+                {% endif %} {% endfor %}
               </select>
               <label>Category</label>
-            </div>  
+            </div>
           </div>
           <!--Recipe name-->
           <div class="row">
@@ -40,6 +45,8 @@
                 id="recipe_name"
                 type="text"
                 class="validate"
+                minlength="5"
+                maxlength="30"
                 value="{{recipe.recipe_name}}"
               />
               <label>Recipe Name</label>
@@ -96,6 +103,8 @@
                 id="ingredients_name"
                 name="ingredients_name"
                 type="text"
+                row="10"
+                maxlength="5000"
                 placeholder="Insert all ingredients on a new line"
                 class="materialize-textarea"
                 value="{{recipe.ingredients_name}}"
@@ -111,6 +120,8 @@
                 id="instructions_name"
                 name="instructions_name"
                 type="text"
+                row="10"
+                maxlength="5000"
                 placeholder="Insert each steps on a new line"
                 class="materialize-textarea"
                 value="{{recipe.instructions_name}}"
