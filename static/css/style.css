@@ -87,13 +87,13 @@ div.recipe-detail.row::after {
   font-family: "Righteous", sans-serif;
 }
 
-.btn-small-edit {
+.small-edit {
   height: 40px;
   border-radius: 8px;
   background-color: #20cd04;
 }
 
-.btn-small-delete {
+.small-delete {
   height: 40px;
   border-radius: 8px;
   background-color: #ef0707;
