@@ -87,6 +87,18 @@ div.recipe-detail.row::after {
   font-family: "Righteous", sans-serif;
 }
 
+.btn-edit {
+  height: 40px;
+  border-radius: 8px;
+  background-color: #20cd04;
+}
+
+.btn-delete {
+  height: 40px;
+  border-radius: 8px;
+  background-color: #ef0707;
+}
+
 /*Footer*/
 
 .page-footer {
