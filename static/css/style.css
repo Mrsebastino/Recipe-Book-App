@@ -90,13 +90,11 @@ div.recipe-detail.row::after {
 .small-edit {
   height: 40px;
   border-radius: 8px;
-  background-color: #20cd04;
 }
 
 .small-delete {
   height: 40px;
   border-radius: 8px;
-  background-color: #ef0707;
 }
 
 /*Footer*/
