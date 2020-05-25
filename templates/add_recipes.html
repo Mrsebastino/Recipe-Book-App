@@ -13,13 +13,12 @@
           class="col s12"
           name="addRecipe"
           id="addRecipe"
-          type="text"
         >
           <!--Meal Category-->
           <div class="row">
             <div class="input-field col s12">
               <i class="fas fa-list-alt prefix"></i>
-              <select id="category_name" name="category_name">
+              <select id="category_name" name="category_name" required>
                 <option value="" disabled selected>Choose type of meal</option>
                 <!--Provide categories from DB-->
                 {% for category in categories %}
@@ -41,7 +40,7 @@
                 type="text"
                 class="validate"
                 value="{{recipe_name}}"
-              />
+                required data-validation-required-message="Please enter a recipe name." placeholder="e.g. Boeuf Bourguignon" maxlength="100"/>             
               <label>Recipe Name</label>
             </div>
           </div>
@@ -92,9 +91,11 @@
               <textarea
                 id="ingredients_name"
                 name="ingredients_name"
-                type="text"
                 placeholder="Insert all ingredients on a new line"
                 class="materialize-textarea"
+                  required data-validation-required-message="Please enter the ingredients"
+                 rows="10"
+                 maxlength="5000" 
               ></textarea>
               <label>Ingredient</label>
             </div>
@@ -106,9 +107,11 @@
               <textarea
                 id="instructions_name"
                 name="instructions_name"
-                type="text"
                 placeholder="Insert each steps on a new line"
                 class="materialize-textarea"
+                required data-validation-required-message="Please enter the cooking instructions"
+                 rows="10"
+                 maxlength="5000" 
               ></textarea>
               <label>Method</label>
             </div>
@@ -123,6 +126,7 @@
                 type="text"
                 placeholder="Insert your URL here"
                 class="validate"
+                required
               />
               <label>Image</label>
             </div>
