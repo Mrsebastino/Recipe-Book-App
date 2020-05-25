@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <h4>Equipments</h4>
+    </div>
+    {% for equipment in equipments %}
+    <li><a href="">{{ equipment.equipments_name[0] }}</a></li>
+    <li><a href="">{{ equipment.equipments_name[1] }}</a></li>
+    <li><a href="">{{ equipment.equipments_name[2] }}</a></li>
+  </div>
+</div>
+{% endfor %} {% endblock %}
