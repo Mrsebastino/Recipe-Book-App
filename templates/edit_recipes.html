@@ -46,7 +46,7 @@
                 type="text"
                 class="validate"
                 minlength="5"
-                maxlength="30"
+                maxlength="100"
                 value="{{recipe.recipe_name}}"
               />
               <label>Recipe Name</label>
@@ -105,9 +105,8 @@
                 type="text"
                 row="10"
                 maxlength="5000"
-                placeholder="Insert all ingredients on a new line"
                 class="materialize-textarea"
-                value="{{recipe.ingredients_name}}"
+                value="{{ recipe.ingredients_name }}"
               ></textarea>
               <label>Ingredient</label>
             </div>
@@ -122,9 +121,8 @@
                 type="text"
                 row="10"
                 maxlength="5000"
-                placeholder="Insert each steps on a new line"
                 class="materialize-textarea"
-                value="{{recipe.instructions_name}}"
+                value="{{ recipe.instructions_name}}"
               ></textarea>
               <label>Method</label>
             </div>
