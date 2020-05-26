@@ -1,16 +1,20 @@
-{% extends 'base.html' %} {% block content %}
-{% for recipe in recipes %}
+{% extends 'base.html' %} {% block content %} {% for recipe in recipes %}
 <div class="container equipment-container hoverable">
   <div class="row">
-    <div class="col s12">
-        <h5>{{ recipe.recipe_name }}</h5>
+    <div class="col s12 m6">
+      <h5>{{ recipe.recipe_name }}</h5>
+
+      {% for equipment in recipe.equipments_name %}
+      <li>
+        <a
+          href="https://www.nisbets.co.uk"
+          aria-label="Equipemnt list"
+          target="_blank"
+          >{{ equipment }}</a
+        >
+      </li>
+      {% endfor %}
     </div>
-   {% for equipment in recipe.equipments_name %}
-          <li><a href="https://www.nisbets.co.uk"
-                aria-label="Equipemnt list"
-                target="_blank">{{ equipment }}</a></li>
-          {% endfor %}
   </div>
 </div>
- {% endfor %}
-{% endblock %}
+{% endfor %} {% endblock %}

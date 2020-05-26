@@ -105,6 +105,8 @@ div.recipe-detail.row::after {
   font-family: "Righteous", sans-serif;
 }
 
+/*button in recipe card */
+
 .small-edit {
   margin-bottom: 5px;
   width: 80px;
