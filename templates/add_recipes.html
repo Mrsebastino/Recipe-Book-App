@@ -40,7 +40,11 @@
                 type="text"
                 class="validate"
                 value="{{recipe_name}}"
-                required data-validation-required-message="Please enter a recipe name." placeholder="e.g. Boeuf Bourguignon" maxlength="100"/>             
+                required
+                data-validation-required-message="Please enter a recipe name."
+                placeholder="e.g. Boeuf Bourguignon"
+                maxlength="100"
+              />
               <label>Recipe Name</label>
             </div>
           </div>
@@ -93,9 +97,10 @@
                 name="ingredients_name"
                 placeholder="Insert all ingredients on a new line"
                 class="materialize-textarea"
-                  required data-validation-required-message="Please enter the ingredients"
-                 rows="10"
-                 maxlength="5000" 
+                required
+                data-validation-required-message="Please enter the ingredients"
+                rows="10"
+                maxlength="5000"
               ></textarea>
               <label>Ingredient</label>
             </div>
@@ -109,11 +114,29 @@
                 name="instructions_name"
                 placeholder="Insert each steps on a new line"
                 class="materialize-textarea"
-                required data-validation-required-message="Please enter the cooking instructions"
-                 rows="10"
-                 maxlength="5000" 
+                required
+                data-validation-required-message="Please enter the cooking instructions"
+                rows="10"
+                maxlength="5000"
               ></textarea>
               <label>Method</label>
+            </div>
+          </div>
+          <!--Equipments-->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="fas fa-utensil-spoon prefix"></i>
+              <textarea
+                id="equipments_name"
+                name="equipments_name"
+                placeholder="Insert each equipment on a new line"
+                class="materialize-textarea"
+                required
+                data-validation-required-message="Please enter recommended equipment"
+                rows="10"
+                maxlength="5000"
+              ></textarea>
+              <label>Equipment</label>
             </div>
           </div>
           <!--Images-->
