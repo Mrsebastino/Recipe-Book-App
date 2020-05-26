@@ -181,3 +181,13 @@ a.logo-footer {
   text-decoration: none;
   background-color: #696969;
 }
+
+@media (max-width: 767px) {
+  .equipment-container {
+    width: auto;
+  }
+  nav .brand-logo {
+    font-size: 25px;
+    text-align: center;
+  }
+}
