@@ -26,12 +26,14 @@
         <span class="card-title"
           >Ingredients<i class="material-icons right">close</i></span
         >
+        <!--Iterate thru the array in DB and return all ingredients-->
         <ul>
         {% for ingredient in recipe.ingredients_name %}
           <li>{{ ingredient }}</li>
           {% endfor %}
         </ul>
         <span class="card-title">Instructions</span>
+        <!--Iterate thru the array in DB and return all instructions-->
         <ul>
           {% for instruction in recipe.instructions_name %}
           <li>{{ instruction }}</li>
@@ -42,22 +44,17 @@
             href="{{url_for('edit_recipe', recipes_id=recipe._id)}}"
             class="waves-effect waves-light btn small-edit green"
             >Edit</a
-          >
-          <a
-            href="{{url_for('delete_recipe', recipes_id=recipe._id)}}"
-            class="waves-effect waves-light btn small-delete red"
-            onclick="confirm_del()"
-            >Delete</a
-          >
+          > 
+           <button type="button" class="btn small-delete red" onclick="confirm_del()">Delete Recipe</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+<!-- Alert prompt to delete a recipe or cancel delete process -->
 <script>
-// Request confirmation before deleting recipe 
 function confirm_del(){
-        let confirmation = confirm("Are you sure you want to delete this recipe?")
+        var confirmation = confirm(" Are you sure you want to delete this recipe?")
         if (confirmation == true){
             window.location.href="{{url_for('delete_recipe', recipes_id=recipe._id)}}";
             alert("The recipe has successfully been deleted.");
@@ -67,4 +64,5 @@ function confirm_del(){
         }
     }
 </script>
+
 {% endfor %} {% endblock %}
