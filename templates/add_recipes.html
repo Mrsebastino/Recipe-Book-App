@@ -40,10 +40,10 @@
                 type="text"
                 class="validate"
                 value="{{recipe_name}}"
-                required
                 data-validation-required-message="Please enter a recipe name."
                 placeholder="e.g. Boeuf Bourguignon"
                 maxlength="100"
+                 required
               />
               <label>Recipe Name</label>
             </div>
@@ -69,7 +69,7 @@
               <input
                 id="serve_name"
                 name="serve_name"
-                type="text"
+                type="number"
                 class="validate"
               />
               <label>Serving</label>
@@ -146,7 +146,7 @@
               <input
                 id="image_link"
                 name="image_link"
-                type="text"
+                type="url"
                 placeholder="Insert your URL here"
                 class="validate"
                 required
