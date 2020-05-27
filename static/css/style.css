@@ -96,6 +96,13 @@ h5 {
 
 /* Recipe card */
 
+/* to control size of images uploaded by user */
+
+img.activator {
+  height: 350px;
+  width: 300px;
+}
+
 div.recipe-detail.row::after {
   display: inline;
 }
@@ -123,8 +130,10 @@ div.recipe-detail.row::after {
 /*Footer
 
 footer {
+  position: absolute;
   width: 100%;
-  max-width: none;
+  bottom: 0;
+  height: 100px;
 }*/
 
 .page-footer {
