@@ -48,6 +48,7 @@
                 minlength="5"
                 maxlength="100"
                 value="{{recipe.recipe_name}}"
+                required
               />
               <label>Recipe Name</label>
             </div>
@@ -106,8 +107,7 @@
                 row="10"
                 maxlength="5000"
                 class="materialize-textarea"
-                value="{{ recipe.ingredients_name }}"
-              ></textarea>
+              >{% for ing in recipe.ingredients_name %}{{ ing }}{% endfor %}</textarea>
               <label>Ingredient</label>
             </div>
           </div>
@@ -122,8 +122,7 @@
                 row="10"
                 maxlength="5000"
                 class="materialize-textarea"
-                value="{{ recipe.instructions_name}}"
-              ></textarea>
+              >{% for inst in recipe.instructions_name %}{{ inst }}{% endfor %}</textarea>
               <label>Method</label>
             </div>
           </div>
@@ -137,8 +136,7 @@
                 class="materialize-textarea"
                 rows="10"
                 maxlength="5000"
-                value="{{ recipe.equipments_name}}"
-              ></textarea>
+              >{% for equip in equipments.equipments_name %}{{ equip }}{% endfor %}</textarea>
               <label>Equipment</label>
             </div>
           </div>
@@ -149,7 +147,7 @@
               <input
                 id="image_link"
                 name="image_link"
-                type="text"
+                type="url"
                 placeholder="Insert your URL here"
                 class="validate"
                 value="{{recipe.image_link}}"
