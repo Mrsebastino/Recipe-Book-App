@@ -36,8 +36,13 @@ Route to  exixting recipe and added recipe by user
 def our_recipes():
     all_recipes = mongo.db.recipes.find()
     all_categories = mongo.db.categories.find()
+    all_equipments = mongo.db.equipments.find()
 
-    return render_template("our_recipes.html", recipes=all_recipes,      categories=all_categories)
+    return render_template("our_recipes.html",
+                           recipes=all_recipes,
+                           equipments=all_equipments,
+                           categories=all_categories
+                           )
 
 
 """
@@ -49,7 +54,13 @@ def our_recipes():
 def add_recipes():
     all_recipes = mongo.db.recipes.find()
     all_categories = mongo.db.categories.find()
-    return render_template("add_recipes.html", recipes=all_recipes,   categories=all_categories, page_title="Add Recipe")
+    all_equipments = mongo.db.equipments.find()
+    return render_template("add_recipes.html",
+                           recipes=all_recipes,
+                           categories=all_categories,
+                           equipments=all_equipments,
+                           page_title="Add Recipe"
+                           )
 
 
 """
@@ -61,11 +72,14 @@ def add_recipes():
 @app.route('/your_recipes/<recipes_id>')
 def your_recipes(recipes_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
-    return render_template("your_recipes.html", recipes=the_recipe, page_title="Your Recipe")
+    return render_template("your_recipes.html",
+                           recipes=the_recipe,
+                           page_title="Your Recipe"
+                           )
 
 
 """
- Route to take our data from add recipe form 
+ Route to take our data from add recipe form
  and display it in your_recipe page
 """
 
@@ -105,8 +119,16 @@ def insert_recipe():
 def edit_recipe(recipes_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     all_recipes = mongo.db.recipes.find()
+    all_equipments = mongo.db.equipments.find()
     all_categories = mongo.db.categories.find()
-    return render_template("edit_recipes.html", recipe=the_recipe, recipes=all_recipes, categories=all_categories, page_title="Edit Recipe")
+
+    return render_template("edit_recipes.html",
+                           recipe=the_recipe,
+                           recipes=all_recipes,
+                           equipments=all_equipments,
+                           categories=all_categories,
+                           page_title="Edit Recipe"
+                           )
 
 
 @app.route('/update_recipe/<recipes_id>',  methods=["POST"])
@@ -117,7 +139,6 @@ def update_recipe(recipes_id):
     ingredients_list = form_data["ingredients_name"].split("\n")
     instructions_list = form_data["instructions_name"].split("\n")
     equipments_list = form_data["equipments_name"].split("\n")
-
     recipes.update(
         {"_id": ObjectId(recipes_id)},
         {
@@ -143,8 +164,8 @@ def delete_recipe(recipes_id):
 
 @app.route('/equipments_list')
 def equipments_list():
-    all_recipes = mongo.db.recipes.find()
-    return render_template("equipment.html", recipes=all_recipes)
+    all_equipments = mongo.db.equipments.find()
+    return render_template("equipment.html", equipments=all_equipments)
 
 
 if __name__ == '__main__':
