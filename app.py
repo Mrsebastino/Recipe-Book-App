@@ -40,7 +40,7 @@ def our_recipes():
 
     return render_template("our_recipes.html",
                            recipes=all_recipes,
-                           equipments=all_equipments,
+                           equipment=all_equipments,
                            categories=all_categories
                            )
 
@@ -58,7 +58,7 @@ def add_recipes():
     return render_template("add_recipes.html",
                            recipes=all_recipes,
                            categories=all_categories,
-                           equipments=all_equipments,
+                           equipment=all_equipments,
                            page_title="Add Recipe"
                            )
 
@@ -72,8 +72,11 @@ def add_recipes():
 @app.route('/your_recipes/<recipes_id>')
 def your_recipes(recipes_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    the_equipment = mongo.db.equipments.find_one()
+
     return render_template("your_recipes.html",
                            recipes=the_recipe,
+                           equipments=the_equipment,
                            page_title="Your Recipe"
                            )
 
@@ -87,11 +90,18 @@ def your_recipes(recipes_id):
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes = mongo.db.recipes
+    equipments = mongo.db.equipments
     form_data = request.form.to_dict()
 
     ingredients_list = form_data["ingredients_name"].split("\n")
     instructions_list = form_data["instructions_name"].split("\n")
-    equipments_list = form_data["equipments_name"].split("\n")
+    equipments_list = form_data["equipment_name"].split("\n")
+    the_equipment = equipments.insert_one(
+        {
+            "equipment_name": equipments_list
+
+        }
+    )
     the_recipe = recipes.insert_one(
         {
             "category_name": form_data["category_name"],
@@ -101,13 +111,13 @@ def insert_recipe():
             "serve_name": form_data["serve_name"],
             "ingredients_name": ingredients_list,
             "instructions_name": instructions_list,
-            "equipments_name": equipments_list,
             "image_link": form_data["image_link"]
 
         }
     )
 
-    return redirect(url_for("your_recipes", recipes_id=the_recipe.inserted_id))
+    return redirect(url_for("your_recipes", recipes_id=the_recipe.inserted_id,
+                            equipments=equipments))
 
 
 """
@@ -118,12 +128,14 @@ def insert_recipe():
 @app.route('/edit_recipe/<recipes_id>')
 def edit_recipe(recipes_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    the_equipment = mongo.db.equipments.find_one()
     all_recipes = mongo.db.recipes.find()
     all_equipments = mongo.db.equipments.find()
     all_categories = mongo.db.categories.find()
 
     return render_template("edit_recipes.html",
                            recipe=the_recipe,
+                           equipment=the_equipment,
                            recipes=all_recipes,
                            equipments=all_equipments,
                            categories=all_categories,
@@ -131,9 +143,10 @@ def edit_recipe(recipes_id):
                            )
 
 
-@app.route('/update_recipe/<recipes_id>',  methods=["POST"])
+@app.route('/update_recipe/<recipes_id>', methods=["POST"])
 def update_recipe(recipes_id):
     recipes = mongo.db.recipes
+    equipments = mongo.db.equipments
     form_data = request.form.to_dict()
 
     ingredients_list = form_data["ingredients_name"].split("\n")
@@ -141,6 +154,7 @@ def update_recipe(recipes_id):
     equipments_list = form_data["equipments_name"].split("\n")
     recipes.update(
         {"_id": ObjectId(recipes_id)},
+
         {
             "category_name": form_data["category_name"],
             "recipe_name": form_data["recipe_name"],
@@ -149,11 +163,14 @@ def update_recipe(recipes_id):
             "serve_name": form_data["serve_name"],
             "ingredients_name": ingredients_list,
             "instructions_name": instructions_list,
-            "equipments_name": equipments_list,
+            "equipment_name": equipments_list,
             "image_link": form_data["image_link"]
 
         })
-    return redirect(url_for("our_recipes"))
+    return redirect(url_for("our_recipes",
+                            equipments=equipments,
+                            recipes_id=recipes_id
+                            ))
 
 
 @app.route('/delete_recipe/<recipes_id>')

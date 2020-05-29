@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col s12">
         <form
-          action="{{ url_for('update_recipe', recipes_id=recipe._id, equipments_id=equipment._id) }}"
+          action="{{ url_for('update_recipe', recipes_id=recipe._id) }}"
           method="POST"
           class="col s12"
           name="editRecipe"
@@ -136,7 +136,7 @@
                 class="materialize-textarea"
                 rows="10"
                 maxlength="5000"
-              >{% for equip in equipments.equipment_name %}{{ equip }}{% endfor %}</textarea>
+              >{% for equip in recipe.equipment_name %}{{ equip }}{% endfor %}</textarea>
               <label>Equipment</label>
             </div>
           </div>
