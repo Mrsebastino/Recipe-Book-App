@@ -1,21 +1,19 @@
-{% extends 'base.html' %} {% block content %} {% for equipment in equipments %}
+{% extends 'base.html' %} {% block content %}{% for recipe in recipes %}
 <div class="container equipment-container hoverable">
   <div class="row">
     <div class="col s12 m6">
-      <h5>{{ equipment.recipe_name }}</h5>  
-     <li>
-        <a
-          href="https://www.nisbets.co.uk"
-          aria-label="Equipment list"
-          target="_blank"
-          >{{ equipment.equipment_name }}</a
-        >
-      </li>
+      <h5>{{ recipe.recipe_name }}</h5>
+      <a
+        href="https://www.nisbets.co.uk"
+        aria-label="Equipment list"
+        target="_blank"
+      >
+        {% for equip in recipe.equipment_name %}
+        <li>{{ equip }}</li>
+        {% endfor %}</a
+      >
     </div>
   </div>
 </div>
-
-
-
 
 {% endfor %} {% endblock %}
