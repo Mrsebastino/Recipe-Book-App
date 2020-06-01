@@ -95,12 +95,11 @@ h5 {
 }
 
 /* Recipe card */
-
 /* to control size of images uploaded by user */
 
 img.activator {
-  height: 350px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
 }
 
 div.recipe-detail.row::after {
@@ -112,7 +111,7 @@ div.recipe-detail.row::after {
   font-family: "Righteous", sans-serif;
 }
 
-/*button in recipe card */
+/*buttons in recipe card */
 
 .small-edit {
   margin-bottom: 5px;
@@ -127,28 +126,19 @@ div.recipe-detail.row::after {
   border-radius: 8px;
 }
 
-/*Footer
-
-footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  height: 100px;
-}*/
+/*Footer*/
 
 .page-footer {
   bottom: 0;
   display: flex;
   margin-top: 15px;
+  padding-bottom: 0;
   background-color: #696969;
   min-height: 100px;
   width: 100%;
   max-width: none;
   flex-direction: column;
   text-align: center;
-  webkit-box-shadow: 2px 3px 3px 3px rgb(45, 45, 45);
-  -moz-box-shadow: 2px 3px 3px 3px rgb(45, 45, 45);
-  box-shadow: 2px 3px 3px 3px rgb(45, 45, 45);
 }
 
 a.logo-footer {
@@ -189,6 +179,16 @@ a.logo-footer {
 .fab:hover {
   text-decoration: none;
   background-color: #696969;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 @media (max-width: 767px) {
