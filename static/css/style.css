@@ -98,8 +98,8 @@ h5 {
 /* to control size of images uploaded by user */
 
 img.activator {
-  height: 400px;
-  width: 400px;
+  height: 320px;
+  width: 320px;
 }
 
 div.recipe-detail.row::after {
