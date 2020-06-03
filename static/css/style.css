@@ -2,8 +2,14 @@
 
 body {
   background-color: #ffffff;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
+main {
+  flex: 1 0 auto;
+}
 /*NavBar*/
 
 .nav-wrapper {
@@ -181,21 +187,13 @@ a.logo-footer {
   background-color: #696969;
 }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
 @media (max-width: 767px) {
   .equipment-container {
     width: auto;
   }
   nav .brand-logo {
+    position: relative;
+    left: 25%;
     font-size: 25px;
     text-align: center;
   }
