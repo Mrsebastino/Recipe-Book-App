@@ -17,7 +17,6 @@
         >
         <p>Category: {{recipe.category_name}}</p>
         <p>Diffilculty: {{ recipe.difficulty_name }}</p>
-        <p>Review: {{ recipe.review_name }}</p>
         <p>Serve: {{ recipe.serve_name }}</p>
       </div>
       <div class="card-reveal">
@@ -25,26 +24,21 @@
           >Ingredients<i class="material-icons right">close</i></span
         >
         <!--Iterate thru the array in DB and return all ingredients-->
-        <ul>
-          {% for ing in recipe.ingredients_name %}
-          <li>{{ ing }}</li>
-          {% endfor %}
-        </ul>
+        {% for ing in recipe.ingredients_name %}
+        <li>{{ ing }}</li>
+        {% endfor %}
         <span class="card-title">Instructions</span>
         <!--Iterate thru the array in DB and return all instructions-->
-        <ul>
+        <ol>
           {% for inst in recipe.instructions_name %}
           <li>{{ inst }}</li>
           {% endfor %}
-        </ul>
+        </ol>
         <span class="card-title">Equipments</span>
         <!--Iterate thru the array in DB and return all equipment-->
-        <ul>
-          {% for equip in recipe.equipment_name %}
-          <li>{{ equip }}</li>
-          {% endfor %}
-        </ul>
-
+        {% for equip in recipe.equipment_name %}
+        <li>{{ equip }}</li>
+        {% endfor %}
         <div class="col s12 m6">
           <a
             href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"

@@ -20,7 +20,6 @@
         >
         <p>Category: {{ recipes.category_name }}</p>
         <p>Diffilculty: {{ recipes.difficulty_name }}</p>
-        <p>Review: {{ recipes.review_name }}</p>
         <p>Serve: {{ recipes.serve_name }}</p>
       </div>
 
@@ -28,24 +27,23 @@
         <span class="card-title"
           >Ingredients<i class="material-icons right">close</i></span
         >
-        <ul>
-          {% for ingredient in recipes.ingredients_name %}
-          <li>{{ ingredient }}</li>
-          {% endfor %}
-        </ul>
+
+        {% for ingredient in recipes.ingredients_name %}
+        <li>{{ ingredient }}</li>
+        {% endfor %}
+
         <span class="card-title">Instructions</span>
-        <ul>
+        <ol>
           {% for instruction in recipes.instructions_name %}
           <li>{{ instruction }}</li>
           {% endfor %}
-        </ul>
+        </ol>
         <span class="card-title">Equipments</span>
         <!--Iterate thru the array in DB and return all equipment-->
-        <ul>
+
         {% for equipment in recipes.equipment_name %}
-          <li>{{ equipment }}</li>
-          {% endfor %}
-        </ul>
+        <li>{{ equipment }}</li>
+        {% endfor %}
       </div>
     </div>
   </div>
