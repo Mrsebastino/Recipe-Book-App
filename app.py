@@ -30,6 +30,7 @@ def home():
 """
 Route to  exixting recipe and added recipe by user
 """
+# provide all recipes from DB
 
 
 @app.route('/our_recipes')
@@ -44,8 +45,9 @@ def our_recipes():
 
 
 """
- Route to  add recipe form. Allow the user to add their recipe
+ Route to  add recipe form.
 """
+# Allow the user to add their recipe
 
 
 @app.route('/add_recipes')
@@ -127,6 +129,11 @@ def edit_recipe(recipe_id):
                            )
 
 
+"""
+ Route to update recipe
+"""
+
+
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
@@ -154,10 +161,20 @@ def update_recipe(recipe_id):
                             ))
 
 
+"""
+Route to delete selected recipe from DB
+"""
+
+
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('our_recipes'))
+
+
+"""
+Route to equipments page
+"""
 
 
 @app.route('/equipments_list')
