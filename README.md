@@ -75,7 +75,7 @@ I would also like to promote the equipments in more interactive way, where equip
 ### Bug encountered
 Not a bug as such, more annoying, i normally use chrome but even with clearing my cache after each change in the CSS, it wouldn't always work. So switched to Firefox(awsome DevTolls).
 
-I had a strange bug withn my footer, it wouldn't stay at the bottom in all pages. It would work for the landing page, add recipe and our recipe but not equipment. Or if it work in equipment it would be in the middle of the other three pages. I tried ` position: absolute bottom:0 height;100px` and evething else i could find online. Finally with `bottom:0` and `padding-bottom:0` the footer finally sit properly on all pages.
+I had a strange bug withn my footer, it wouldn't stay at the bottom in all pages. It would work for the landing page, add recipe and our recipe but not equipment. Or if it work in equipment it would be in the middle of the other three pages. I tried `position:absolut  bottom:0  height:100px` and everything else i could find online. Finally with `bottom:0` and `padding-bottom:0` the footer finally sit properly on all pages.
 ### Testing
 
 ## Deployment
@@ -85,7 +85,7 @@ To run this project you will need the following installed:
 * An IDE. My prefered IDE for this project was [GitPod](https://www.gitpod.io/)
 * [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 * [PIP](https://pip.pypa.io/en/stable/installing/)
-* [Python](https://www.python.org/) If you use a Mac Python comes pre installed.
+* [Python](https://www.python.org/) If you use a Mac, Python comes pre installed.
 
 #### Directions
 1. You can clone this repository directly into you editor by pasting the following command into the terminal:https://github.com/Mrsebastino/MS3-RecipeBook.git
