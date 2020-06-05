@@ -43,7 +43,7 @@ part of the website, where needed i have use CSS and Media-Queries to make it fu
 ### Wireframes
 
 * Desktop
-![Desktop Version](static/wireframes/desktop_landing_page.jpg/desktop_addrecipe.jpg/desktop_ourrecipe.jpg)
+![Desktop Version](static/wireframes/desktop_landing_page.jpg)
 * Tablet
 ![Tablet Version](static/wireframes/)
 * Mobile
