@@ -27,6 +27,8 @@ Click here for a live Demo
 3. As a user i want to edit recipes.
 
 4. As a user i want an easy website to add my recipes.
+
+5. As a user i want to view equipment i might need.
 ### UI
 ---
 The website is kept simple and low profile to avoid unnecessary distraction
@@ -41,7 +43,7 @@ part of the website, where needed i have use CSS and Media-Queries to make it fu
 ### Wireframes
 
 * Desktop
-![Desktop Version](static/wireframes/)
+![Desktop Version](static/wireframes/desktop_landing_page.jpg/desktop_addrecipe.jpg/desktop_ourrecipe.jpg)
 * Tablet
 ![Tablet Version](static/wireframes/)
 * Mobile
