@@ -92,11 +92,11 @@ def your_recipes(recipe_id):
 def insert_recipe():
     recipes = mongo.db.recipes
     form_data = request.form.to_dict()
+    equipments_use = request.form.getlist("equipment_name")
 
     ingredients_list = form_data["ingredients_name"].split("\n")
     instructions_list = form_data["instructions_name"].split("\n")
-    equipments_list = form_data["equipment_name"].split("\n")
-
+    equipments_list = equipments_use
     the_recipe = recipes.insert_one(
         {
             "category_name": form_data["category_name"],
@@ -144,10 +144,11 @@ def edit_recipe(recipe_id):
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
     form_data = request.form.to_dict()
+    equipments_use = request.form.getlist("equipment_name")
 
     ingredients_list = form_data["ingredients_name"].split("\n")
     instructions_list = form_data["instructions_name"].split("\n")
-    equipments_list = form_data["equipment_name"].split("\n")
+    equipments_list = equipments_use
     recipes.update(
         {"_id": ObjectId(recipe_id)},
 
