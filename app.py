@@ -37,10 +37,12 @@ Route to  exixting recipe and added recipe by user
 def our_recipes():
     all_recipes = mongo.db.recipes.find()
     all_categories = mongo.db.categories.find()
+    all_equipments = mongo.db.equipments.find()
 
     return render_template("our_recipes.html",
                            recipes=all_recipes,
-                           categories=all_categories
+                           categories=all_categories,
+                           equipments=all_equipments
                            )
 
 
@@ -54,10 +56,12 @@ def our_recipes():
 def add_recipes():
     all_recipes = mongo.db.recipes.find()
     all_categories = mongo.db.categories.find()
+    all_equipments = mongo.db.equipments.find()
 
     return render_template("add_recipes.html",
                            recipes=all_recipes,
                            categories=all_categories,
+                           equipments=all_equipments,
                            page_title="Add Recipe"
                            )
 
@@ -120,11 +124,13 @@ def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_recipes = mongo.db.recipes.find()
     all_categories = mongo.db.categories.find()
+    all_equipments = mongo.db.equipments.find()
 
     return render_template("edit_recipes.html",
                            recipe=the_recipe,
                            recipes=all_recipes,
                            categories=all_categories,
+                           equipments=all_equipments,
                            page_title="Edit Recipe"
                            )
 
@@ -141,7 +147,7 @@ def update_recipe(recipe_id):
 
     ingredients_list = form_data["ingredients_name"].split("\n")
     instructions_list = form_data["instructions_name"].split("\n")
-    equipments_list = form_data["equipments_name"].split("\n")
+    equipments_list = form_data["equipment_name"].split("\n")
     recipes.update(
         {"_id": ObjectId(recipe_id)},
 
