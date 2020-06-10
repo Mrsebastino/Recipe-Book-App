@@ -87,14 +87,14 @@ I have added loads of recipe throuhgout the development, everthing work as it is
 ### Validators
 #### HTML5
 No error were found on the 
-Landing page ![html Validator](static/wireframes/landing-page-2020-06-10-125202.png)
-No errors were found on add_recipe page ![html validator](static/wireframes/add-recipe-page-2020-06-10-130333.png)
-The errors found on our_recipe page are caused by the use of jinja. I found this i put my`<li>` inside a `<ul>` the bullet point disappear. The others errors are stating that my `img src=""` is empty, because it's being populated thru an iteration of my DB ![html validator](static/wireframes/our-recipe-page-2020-06-10-131439.png)
-The errors found on the equipment page are the of the same nature as above. The problem with `<li>` ![html validator](static/wireframes/equipment-list-page-2020-06-10-132432.png)
+Landing page ![html Validator](static/validation-image/landing-page-2020-06-10-125202.png)
+No errors were found on add_recipe page ![html validator](static/validation-image/add-recipe-page-2020-06-10-130333.png)
+The errors found on our_recipe page are caused by the use of jinja. I found this i put my`<li>` inside a `<ul>` the bullet point disappear. The others errors are stating that my `img src=""` is empty, because it's being populated thru an iteration of my DB ![html validator](static/validation-image/our-recipe-page-2020-06-10-131439.png)
+The errors found on the equipment page are the of the same nature as above. The problem with `<li>` ![html validator](static/validation-image/equipment-list-page-2020-06-10-132432.png)
 #### CSS
-Here is the result of the validators ![CSS Validator](static/wireframes/2020-06-10-121111.png) the 7 warnings are `-moz-transition -webkit-transition -0-transition`. I used them in two places, the last warning is for the first line.
+Here is the result of the validators ![CSS Validator](static/validation-image/2020-06-10-121111.png) the 7 warnings are `-moz-transition -webkit-transition -0-transition`. I used them in two places, the last warning is for the first line.
 #### Python3
-No error were found for Ptyhon3 ![PEP8](static/wireframes/python-2020-06-10-133811.png)
+No error were found for Ptyhon3 ![PEP8](static/validation-image/python-2020-06-10-133811.png)
 ## Deployment
 The project is stored on GitHub and hosted on Heroku.
 ### Local Deployment
