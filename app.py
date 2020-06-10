@@ -187,7 +187,12 @@ Route to equipments page
 @app.route('/equipments_list')
 def equipments_list():
     all_recipes = mongo.db.recipes.find()
-    return render_template("equipment.html", recipes=all_recipes)
+    all_equipments = list(mongo.db.equipments.find())
+
+    return render_template("equipment.html",
+                           recipes=all_recipes,
+                           equipments=all_equipments
+                           )
 
 
 if __name__ == '__main__':
