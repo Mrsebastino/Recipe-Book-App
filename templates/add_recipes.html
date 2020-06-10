@@ -15,12 +15,12 @@
 						<div class="input-field col s12">
 							<i class="fas fa-list-alt prefix"></i>
 							<select
-                required
                 id="category_name"
                 name="category_name"
                 class="validate"
+                required
               >
-                <option value="" required disabled selected
+                <option value="" disabled selected
                   >Choose type of meal</option
                 >
                 <!--Provide categories from DB-->
@@ -116,8 +116,8 @@
 					<div class="input-field col s12">
 						<i class="fas fa-utensils prefix"></i>
 						<select  multiple id="equipment_name"
-                name="equipment_name" class="validate icons">
-              <option value="" disabled selected required>Select Equipment</option>
+                name="equipment_name" class="validate icons" required>
+              <option value="" disabled selected>Select Equipment</option>
                {% for equipment in equipments %}              
                <option value="{{ equipment.equipment_name }}" data-icon="{{equipment.image_link}}"
                >{{equipment.equipment_name}}</option>

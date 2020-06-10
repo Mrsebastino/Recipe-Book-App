@@ -26,7 +26,7 @@
         >
         <!--Iterate thru the array in DB and return all ingredients-->
         {% for ing in recipe.ingredients_name %}
-        <li>{{ ing }}</li>
+          <li>{{ ing }}</li>
         {% endfor %}
         <span class="card-title">Instructions</span>
         <!--Iterate thru the array in DB and return all instructions-->
@@ -39,7 +39,7 @@
         <!--Iterate thru the array in DB and return all equipment-->
         {% for equip in recipe.equipment_name %}
         <li>{{ equip }}</li>
-        <img src="{{image_link}}" />
+        <img src="{{image_link}}" alt="equipments image" />
         {% endfor %}
         <div class="col s12 m6">
           <a

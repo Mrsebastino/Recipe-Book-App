@@ -1,51 +1,49 @@
 {% extends 'base.html' %} {% block content %}
 <!--Let the user have have a look at their added recipe-->
 <div class="row">
-  <div class="col s12">
-    <h3 class="header-add-recipe">{{ page_title }}</h3>
-  </div>
+	<div class="col s12">
+		<h3 class="header-add-recipe">{{ page_title }}</h3>
+	</div>
 </div>
 
 <div class="row">
-  <div class="col s12 m6">
-    <div class="card card-recipe hoverable">
-      <div class="card-image white-text">
-        <img class="activator" src="{{recipes.image_link}}" />
+	<div class="col s12 m6">
+		<div class="card card-recipe hoverable">
+			<div class="card-image white-text">
+				<img class="activator" src="{{recipes.image_link}}" alt="Recipe's image" />
       </div>
 
-      <div class="card-content">
-        <span class="card-title activator text-darken-4"
+				<div class="card-content">
+					<span class="card-title activator text-darken-4"
           >{{ recipes.recipe_name }}<i class="material-icons right"
             >more_vert</i
-          ></span
-        >
-        <p>Category: {{ recipes.category_name }}</p>
-        <p>Diffilculty: {{ recipes.difficulty_name }}</p>
-        <p>Serve: {{ recipes.serve_name }}</p>
-      </div>
+          ></span>
+					<p>Category: {{ recipes.category_name }}</p>
+					<p>Diffilculty: {{ recipes.difficulty_name }}</p>
+					<p>Serve: {{ recipes.serve_name }}</p>
+				</div>
 
-      <div class="card-reveal">
-        <span class="card-title"
-          >Ingredients<i class="material-icons right">close</i></span
-        >
-         <!--Iterate thru the array in DB and return all ingredients-->
-        {% for ingredient in recipes.ingredients_name %}
-        <li>{{ ingredient }}</li>
-        {% endfor %}
-        <span class="card-title">Instructions</span>
-         <!--Iterate thru the array in DB and return all intructions-->
-        <ol>
-          {% for instruction in recipes.instructions_name %}
-          <li>{{ instruction }}</li>
-          {% endfor %}
-        </ol>
-        <span class="card-title">Equipments</span>
-        <!--Iterate thru the array in DB and return all equipments-->
-        {% for equipment in recipes.equipment_name %}
-        <li>{{ equipment }}</li>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</div>
-{% endblock %}
+				<div class="card-reveal">
+					<span class="card-title"
+          >Ingredients<i class="material-icons right">close</i></span>
+					<!--Iterate thru the array in DB and return all ingredients-->
+					{% for ingredient in recipes.ingredients_name %}
+					<li>{{ ingredient }}</li>
+					{% endfor %}
+					<span class="card-title">Instructions</span>
+					<!--Iterate thru the array in DB and return all intructions-->
+					<ol>
+						{% for instruction in recipes.instructions_name %}
+						<li>{{ instruction }}</li>
+						{% endfor %}
+					</ol>
+					<span class="card-title">Equipments</span>
+					<!--Iterate thru the array in DB and return all equipments-->
+					{% for equipment in recipes.equipment_name %}
+					<li>{{ equipment }}</li>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endblock %}
