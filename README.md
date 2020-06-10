@@ -42,12 +42,9 @@ part of the website, where needed i have use CSS and Media-Queries to make it fu
 
 ### Wireframes
 
-* Desktop
-![Desktop Version](static/wireframes/desktop_landing_page.jpg)
-* Tablet
-![Tablet Version](static/wireframes/)
-* Mobile
-![Mobile Version](staic/wireframes)
+All drawings for the webistes can be found here
+[Wireframes](https://github.com/Mrsebastino/MS3-RecipeBook/tree/master/static/wireframes/), they include desktop, tablet and mobile.
+
 ### Technologies Used
 #### Languages
 * HTML5
@@ -68,26 +65,44 @@ part of the website, where needed i have use CSS and Media-Queries to make it fu
 ### Features
 For this project i have used Materialize instead of Bootstrap. I used Materializefor the NavBar, for both small and large screen. I have reused and adapted the footer from my last project.
 
-In the Navbar there is three links, add recipe, our recipe(where you can view all recipes), equipments(where you can view all equipments).
+In the Navbar there is three links, add recipe, our recipe(where you can view all recipes) and equipments(where you can view all equipments).
 
 In the future i would like to implement a secure login and password verification for users. So they can save on their page their favorite recipes.
 
 I would also like to promote the equipments in more interactive way, where equipments send you to recipes where you would need this particular piece of equipment and vice versa.
 
+I also want to create a search bar where we can target recipe by category and diffilculty.
+
 ### Bug encountered
 Not a bug as such, more annoying, i normally use chrome but even with clearing my cache after each change in the CSS, it wouldn't always work. So switched to Firefox(awsome DevTolls).
 
+In my select form, i have had a problem with not being able to have it `required`. 
+
 I had a strange bug withn my footer, it wouldn't stay at the bottom in all pages. It would work for the landing page, add recipe and our recipe but not equipment. Or if it work in equipment it would be in the middle of the other three pages. I tried `position:absolut  bottom:0  height:100px` and everything else i could find online. Finally with `bottom:0` and `padding-bottom:0` the footer finally sit properly on all pages.
 ### Testing
-
+##### NavBar and Footer
+All link in the Navbar and footer were tested manually, they all redirect you to the right page or website.
+##### Add Recipe
+I have added loads of recipe throuhgout the development, everthing work as it is intented. You are prompted to fill the empty fields.
+### Validators
+#### HTML5
+No error were found on the 
+Landing page ![html Validator](static/wireframes/landing-page-2020-06-10-125202.png)
+No errors were found on add_recipe page ![html validator](static/wireframes/add-recipe-page-2020-06-10-130333.png)
+The errors found on our_recipe page are caused by the use of jinja. I found this i put my`<li>` inside a `<ul>` the bullet point disappear. The others errors are stating that my `img src=""` is empty, because it's being populated thru an iteration of my DB ![html validator](static/wireframes/our-recipe-page-2020-06-10-131439.png)
+The errors found on the equipment page are the of the same nature as above. The problem with `<li>` ![html validator](static/wireframes/equipment-list-page-2020-06-10-132432.png)
+#### CSS
+Here is the result of the validators ![CSS Validator](static/wireframes/2020-06-10-121111.png) the 7 warnings are `-moz-transition -webkit-transition -0-transition`. I used them in two places, the last warning is for the first line.
+#### Python3
+No error were found for Ptyhon3 ![PEP8](static/wireframes/python-2020-06-10-133811.png)
 ## Deployment
 The project is stored on GitHub and hosted on Heroku.
 ### Local Deployment
 To run this project you will need the following installed:
-* An IDE. My prefered IDE for this project was [GitPod](https://www.gitpod.io/)
-* [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-* [PIP](https://pip.pypa.io/en/stable/installing/)
-* [Python](https://www.python.org/) If you use a Mac, Python comes pre installed.
+- An IDE. My prefered IDE for this project was [GitPod](https://www.gitpod.io/)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+- [PIP](https://pip.pypa.io/en/stable/installing/)
+- [Python](https://www.python.org/) If you use a Mac, Python comes pre installed.
 
 #### Directions
 1. You can clone this repository directly into you editor by pasting the following command into the terminal:https://github.com/Mrsebastino/MS3-RecipeBook.git
@@ -96,7 +111,7 @@ To run this project you will need the following installed:
 * Here you will create all your collections for your database.
 * You will be given your identification link to your MongoDB_URI, you will need this for your .env files.
 * To get the MongoDB_URI you click on "Overview/connect/connect your application" and copy and paste the link on the page.
-4. In  your root directory creat a .env file.
+4. In your root directory creat a .env file.
 * At the top of file `import os`
 * Set the connection to MongoDB.
   `os.environ["MONGO_URI"] = "here goes the link to your MongoDB database"`
