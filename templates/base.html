@@ -1,135 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/static/images/favicon-32x32.png"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='css/style.css')}}"
-      type="text/css"
-    />
-    <title>Home Cooking</title>
-  </head>
-  <body>
-    <header>
-    <!--Nav Bar taken form materialize-->
-      <nav>
-        <div class="nav-wrapper">
-          <a href="{{url_for('home')}}" class="brand-logo whitesmoke-text"
-            >Home Cooking</a
-          >
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
-            ><i class="material-icons">menu</i></a
-          >
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li>
-              <a href="{{url_for('add_recipes')}}"
-                ><i class="fas fa-edit small-nav-icon"></i>Add Recipe</a
-              >
-            </li>
-            <li>
-              <a href="{{url_for('our_recipes')}}"
-                ><i class="fas fa-archive small-nav-icon"></i>Our Recipes</a
-              >
-            </li>
-            <li>
-              <a href="{{url_for('equipments_list')}}"
-                ><i class="fas fa-utensils small-nav-icon"></i>Equipment</a
-              >
-            </li>
-          </ul>
-          <!--Side nav taken form Materialize-->
-          <ul class="sidenav" id="mobile-demo">
-            <li>
-              <a href="{{url_for('add_recipes')}}"
-                ><i class="fas fa-edit small-nav-icon"></i>Add Recipe</a
-              >
-            </li>
-            <li>
-              <a href="{{url_for('our_recipes')}}"
-                ><i class="fas fa-archive small-nav-icon"></i>Our Recipe</a
-              >
-            </li>
-            <li>
-              <a href="{{url_for('equipments_list')}}"
-                ><i class="fas fa-utensils small-nav-icon"></i>Equipment</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <!--The container class serves in all HTML for the materialize grid systems-->
-      <div class="container">
-        {% block content %} {% endblock %}
-      </div>
-    </main>
-    <!--Footer taken from my last project and redigned-->
-    <footer>
-      <div class="container page-footer">
-        <div class="row">
-          <div class="col s12 l6">
-            <a class="logo-footer brand-logo" href="{{url_for('home')}}"
-              ><span>Home Cooking</span></a
-            >
-          </div>
-          <div class="col l6 offset-6 s12">
-            <ul class="list-inline social-link">
-              <li class="list-inline-item">
-                <a
-                  href="https://www.facebook.com"
-                  aria-label="Facebook"
-                  target="_blank"
-                  ><i class="fab fa-facebook" rel="noopener"></i
-                ></a>
-                <a
-                  href="https://www.instagram.com"
-                  aria-label="Instagram"
-                  target="_blank"
-                  ><i class="fab fa-instagram" rel="noopener"></i
-                ></a>
-                <a
-                  href="https://www.twitter.com"
-                  aria-label="Twitter"
-                  target="_blank"
-                  ><i class="fab fa-twitter" rel="noopener"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-      $(document).ready(function () {
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+	<title>Home Cooking</title>
+</head>
+
+<body>
+	<header>
+
+		<!--Nav Bar taken form materialize-->
+		<nav>
+			<div class="nav-wrapper">
+				<a href="{{url_for('home')}}" class="brand-logo whitesmoke-text">Home Cooking</a>
+				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li>
+						<a href="{{url_for('add_recipes')}}"><i class="fas fa-edit small-nav-icon"></i>Add Recipe</a>
+					</li>
+					<li>
+						<a href="{{url_for('our_recipes')}}"><i class="fas fa-archive small-nav-icon"></i>Our
+							Recipes</a>
+					</li>
+					<li>
+						<a
+							href="{{url_for('equipments_list')}}"><i class="fas fa-utensils small-nav-icon"></i>Equipment</a>
+					</li>
+				</ul>
+				<!--Side nav taken form Materialize-->
+				<ul class="sidenav" id="mobile-demo">
+					<li>
+						<a href="{{url_for('add_recipes')}}"><i class="fas fa-edit small-nav-icon"></i>Add Recipe</a>
+					</li>
+					<li>
+						<a href="{{url_for('our_recipes')}}"><i class="fas fa-archive small-nav-icon"></i>Our Recipe</a>
+					</li>
+					<li>
+						<a
+							href="{{url_for('equipments_list')}}"><i class="fas fa-utensils small-nav-icon"></i>Equipment</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<!--The container class serves in all HTML for the materialize grid systems-->
+		<div class="container">
+			{% block content %} {% endblock %}
+		</div>
+	</main>
+	<!--Footer taken from my last project and redigned-->
+	<footer>
+		<div class="container page-footer">
+			<div class="row">
+				<div class="col s12 l6">
+					<a class="logo-footer brand-logo" href="{{url_for('home')}}"><span>Home Cooking</span></a>
+				</div>
+				<div class="col l6 offset-6 s12">
+					<ul class="list-inline social-link">
+						<li class="list-inline-item">
+							<a href="https://www.facebook.com" aria-label="Facebook"
+								target="_blank"><i class="fab fa-facebook" rel="noopener"></i></a>
+							<a href="https://www.instagram.com" aria-label="Instagram"
+								target="_blank"><i class="fab fa-instagram" rel="noopener"></i></a>
+							<a href="https://www.twitter.com" aria-label="Twitter"
+								target="_blank"><i class="fab fa-twitter" rel="noopener"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function () {
         // this is taking from materialize to initialize side nav
         $(".sidenav").sidenav();
-        // this is taking from materialize to initialize the form select 
+        // this is taking from materialize to initialize the form select
         $("select").formSelect();
       });
-    </script>
-  </body>
+	</script>
+</body>
+
 </html>
