@@ -77,6 +77,7 @@ I also want to create a search bar where we can target recipe by category and di
 Not a bug as such, more annoying, i normally use chrome but even with clearing my cache after each change in the CSS, it wouldn't always work. So switched to Firefox(awsome DevTolls).
 
 In my select form, i have had a problem with not being able to have it `required`. 
+In the `card-reveal` from materialize for the recipes, i am using a `<li>` inside it. But if i use the correct syntax, having my list inside a `<ol>` or `<ul>` i amm unble to use a bullet point, if i remove the `<u>` the bullet point appear.
 
 I had a strange bug withn my footer, it wouldn't stay at the bottom in all pages. It would work for the landing page, add recipe and our recipe but not equipment. Or if it work in equipment it would be in the middle of the other three pages. I tried `position:absolut  bottom:0  height:100px` and everything else i could find online. Finally with `bottom:0` and `padding-bottom:0` the footer finally sit properly on all pages.
 ### Testing
@@ -138,7 +139,13 @@ To deploy the project to [Heroku](https://heroku.com), you will to have an accou
 ## Credits
 
 ### Contents
+I have referred to the three projects, that we build along in the module. More specifically The Thorin & Company, the chat app and the task app at multiple stage in my website development, specially  the setup of Flask, MongoDB and Heroku.
+
+I also used **Stack Overflow** and **Pretty Printed** on youtube ( recommended by my mentor).
 
 ### Media
+All the equipments images are taken from Google.
+The background image in the landing page is from unsplash.
 
 ### Acknowledgements
+I would like to thanks my Mentor Brian Macharia, all the tutors at the Code Institute and everyones on Slack.
