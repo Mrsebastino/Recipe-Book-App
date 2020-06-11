@@ -35,14 +35,10 @@ Route to  exixting recipe and added recipe by user
 
 @app.route('/our_recipes')
 def our_recipes():
-    all_recipes = mongo.db.recipes.find()
-    all_categories = mongo.db.categories.find()
-    all_equipments = mongo.db.equipments.find()
+    recipes = mongo.db.recipes.find()
 
     return render_template("our_recipes.html",
-                           recipes=all_recipes,
-                           categories=all_categories,
-                           equipments=all_equipments
+                           recipes=recipes,
                            )
 
 
@@ -193,6 +189,15 @@ def equipments_list():
                            recipes=all_recipes,
                            equipments=all_equipments
                            )
+
+
+@app.route('/recipes_by_equipment<equipment_name>')
+def recipes_by_equipment(equipment_name):
+    recipes = mongo.db.recipes.find(
+        {'equipment_name': {'$in': ['equipment_name']}},
+    )
+
+    return render_template("our_recipes.html", recipes=recipes)
 
 
 if __name__ == '__main__':
