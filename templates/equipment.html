@@ -1,23 +1,19 @@
-{% extends 'base.html' %} {% block content %} {% for recipe in recipes %}
+{% extends 'base.html' %} {% block content %} {% for equipment in equipments %}
 <div class="container equipment-container hoverable">
   <div class="row">
     <div class="equipment-box col s12 m6">
-      <h5>{{ recipe.recipe_name }}</h5>
-      {% for equipment in recipe.equipment_name %}
-      <h6><li>{{ equipment }}</li></h6>
-      {% for item in equipments %} {% if item.equipment_name == equipment %}
+      <a href="{{url_for('recipes_by_equipment', equipment_name=equipment.equipment_name)}}"><h5>{{ equipment.equipment_name }}</h5></a>
       <div class="card-image">
         <img
           id="equipment-image"
-          src="{{item.image_link}}"
+          src="{{equipment.image_link}}"
           alt="Equipment's image"
           width="100"
         />
         <div class="card-content">
-          <p class="equipment-description">{{ item.equipment_description }}</p>
+          <p class="equipment-description">{{ equipment.equipment_description }}</p>
         </div>
       </div>
-      {% endif %}{% endfor %} {% endfor %}
     </div>
   </div>
 </div>

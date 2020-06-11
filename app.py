@@ -182,22 +182,22 @@ Route to equipments page
 
 @app.route('/equipments_list')
 def equipments_list():
-    all_recipes = mongo.db.recipes.find()
+    recipes = mongo.db.recipes.find()
     all_equipments = list(mongo.db.equipments.find())
 
     return render_template("equipment.html",
-                           recipes=all_recipes,
+                           recipes=recipes,
                            equipments=all_equipments
                            )
 
 
-@app.route('/recipes_by_equipment<equipment_name>')
+@app.route('/recipes_by_equipment/<equipment_name>')
 def recipes_by_equipment(equipment_name):
     recipes = mongo.db.recipes.find(
-        {'equipment_name': {'$in': ['equipment_name']}},
+        {'equipment_name': {'$in': [equipment_name]}},
     )
 
-    return render_template("our_recipes.html", recipes=recipes)
+    return render_template('our_recipes.html', recipes=recipes)
 
 
 if __name__ == '__main__':
