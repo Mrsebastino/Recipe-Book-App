@@ -28,7 +28,7 @@ def home():
 
 
 """
-Route to  exixting recipe and added recipe by user
+Route to  existing recipe and added recipe by user
 """
 # provide all recipes from DB
 
@@ -191,6 +191,12 @@ def equipments_list():
                            )
 
 
+"""
+Route to view recipe linked to the equipment selected
+by user.
+"""
+
+
 @app.route('/recipes_by_equipment/<equipment_name>')
 def recipes_by_equipment(equipment_name):
     recipes = mongo.db.recipes.find(
@@ -203,4 +209,4 @@ def recipes_by_equipment(equipment_name):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)
