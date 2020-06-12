@@ -114,6 +114,14 @@ nav ul a {
     text-transform: capitalize; 
 }
 
+.equip-name:Hover{
+    font-size: 25px;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
 /* to control size of images uploaded by user in recipe card */
 
 img.activator {  
