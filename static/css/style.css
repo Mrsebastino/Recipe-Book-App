@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Righteous:300,400,500,600,700|PT Mono:300,400,500");
 
 body {
-  background-color: #ffffff;
+  background-color: #f6f098;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -14,7 +14,7 @@ main {
 /*NavBar*/
 
 .nav-wrapper {
-  background-color: #696969;
+  background-color: #f5af2e;
 }
 
 .material-icons {
@@ -95,32 +95,23 @@ nav ul a {
 /*equipment page*/
 
 .equipment-container {
-  display: flex;
   content: center;
   height: auto;
-  width: 30em;
-  padding-left: 30px;
+  width: 35em;
+  padding-left: 40px;
   border-style: ridge;
   border-radius: 20px;
   margin: auto;
   margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: #d4d3d0be;
+  background-color: #f6f5f1d3;
 }
 
-.equipment-description {
-  margin-left: 50px;
-  width: auto;
-}
-
-#equipment-image {
-  margin-left: 6em;
-}
-
-h5,
-h6 {
-  font-family: "Righteous", sans-serif;
-  margin-left: 4em;
+.equip-name {
+    text-align: center;
+    font-size:20px;
+    font-family: "Righteous", sans-serif;
+    color: black;
+    text-transform: capitalize; 
 }
 
 /* to control size of images uploaded by user in recipe card */
@@ -164,7 +155,7 @@ div.recipe-detail.row::after {
   display: flex;
   margin-top: 15px;
   padding-bottom: 0;
-  background-color: #696969;
+  background-color: #f5af2e;
   min-height: 100px;
   width: 100%;
   max-width: none;
