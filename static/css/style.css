@@ -44,6 +44,15 @@ nav ul a {
   color: white;
 }
 
+.introduction {
+  font-family: "Righteous", sans-serif;
+  font-weight: 800;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  padding-top: 4em;
+}
+
 .bg-image-landing {
   margin-top: 10px;
   background-image: url("../images/veg-display.jpg");
@@ -86,6 +95,10 @@ nav ul a {
 /*equipment page*/
 
 .equipment-container {
+<<<<<<< HEAD
+=======
+  display: flex;
+>>>>>>> ff75ad109d551f47dbdb5804ae68edf2c1b492e6
   content: center;
   height: auto;
   width: 30em;
@@ -107,11 +120,17 @@ nav ul a {
   margin-left: 6em;
 }
 
+<<<<<<< HEAD
     
 
 
 h5 {
+=======
+h5,
+h6 {
+>>>>>>> ff75ad109d551f47dbdb5804ae68edf2c1b492e6
   font-family: "Righteous", sans-serif;
+  margin-left: 4em;
 }
 
 /* to control size of images uploaded by user in recipe card */

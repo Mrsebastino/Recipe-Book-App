@@ -35,14 +35,10 @@ Route to  exixting recipe and added recipe by user
 
 @app.route('/our_recipes')
 def our_recipes():
-    all_recipes = mongo.db.recipes.find()
-    all_categories = mongo.db.categories.find()
-    all_equipments = mongo.db.equipments.find()
+    recipes = mongo.db.recipes.find()
 
     return render_template("our_recipes.html",
-                           recipes=all_recipes,
-                           categories=all_categories,
-                           equipments=all_equipments
+                           recipes=recipes,
                            )
 
 
@@ -186,11 +182,11 @@ Route to equipments page
 
 @app.route('/equipments_list')
 def equipments_list():
-    all_recipes = mongo.db.recipes.find()
+    recipes = mongo.db.recipes.find()
     all_equipments = list(mongo.db.equipments.find())
 
     return render_template("equipment.html",
-                           recipes=all_recipes,
+                           recipes=recipes,
                            equipments=all_equipments
                            )
 
