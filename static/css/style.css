@@ -95,10 +95,7 @@ nav ul a {
 /*equipment page*/
 
 .equipment-container {
-<<<<<<< HEAD
-=======
   display: flex;
->>>>>>> ff75ad109d551f47dbdb5804ae68edf2c1b492e6
   content: center;
   height: auto;
   width: 30em;
@@ -120,15 +117,8 @@ nav ul a {
   margin-left: 6em;
 }
 
-<<<<<<< HEAD
-    
-
-
-h5 {
-=======
 h5,
 h6 {
->>>>>>> ff75ad109d551f47dbdb5804ae68edf2c1b492e6
   font-family: "Righteous", sans-serif;
   margin-left: 4em;
 }
