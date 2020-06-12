@@ -195,7 +195,7 @@ def equipments_list():
 def recipes_by_equipment(equipment_name):
     recipes = mongo.db.recipes.find(
         {'equipment_name': {'$in': [equipment_name]}},
-    )
+    ).limit(5)
 
     return render_template('our_recipes.html', recipes=recipes)
 
