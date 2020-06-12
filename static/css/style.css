@@ -116,9 +116,10 @@ nav ul a {
 
 /* to control size of images uploaded by user in recipe card */
 
-img.activator {
-  height: 320px;
-  width: 320px;
+img.activator {  
+  height: 500px;
+  max-width: 100%;
+ 
 }
 
 /* Recipe card */
