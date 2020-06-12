@@ -195,6 +195,15 @@ def equipments_list():
                            )
 
 
+@app.route('/recipes_by_equipment/<equipment_name>')
+def recipes_by_equipment(equipment_name):
+    recipes = mongo.db.recipes.find(
+        {'equipment_name': {'$in': [equipment_name]}},
+    )
+
+    return render_template('our_recipes.html', recipes=recipes)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
