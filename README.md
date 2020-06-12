@@ -3,15 +3,18 @@
 ---
 This website is intended to be use as a bank of recipes. 
 It is intended to be for Home Cook, users can add, edit or delete recipes.
-There is  a section where equipments are listed for user to view.
+There is  a section where equipments are listed for user to view with a link to recipes.
 
 The webpage goals is to:
 * Provide an easy access and easy to navigate sites with recipes.
 * Allow the user to easily add and edit recipe with only a few steps.
+* Promote equipments by linking them to recipes that need that particular equipment.
 
 The customer goals:
-* Find new recipe to try based at home.
+* Find new recipe to try.
 * Add their own recipe to the exiting bank of recipe.
+* Edit recipe.
+* View equipments showcase on the website.
 
 ### Demo 
 ---
@@ -22,13 +25,13 @@ Click here for a live Demo
 ---
 1. As a user, i want to be able to view and access recipes.
 
-2. As a user i want to add recipes.
+2. As a user i want to add and recipes.
 
 3. As a user i want to edit recipes.
 
 4. As a user i want an easy website to add my recipes.
 
-5. As a user i want to view equipment i might need.
+5. As a user i want to view equipments that i might need.
 ### UI
 ---
 The website is kept simple and low profile to avoid unnecessary distraction
@@ -38,12 +41,10 @@ This website has been built with the mobile first approach.
 It is highly responsive, i have use Materialize for all the main skeleton
 part of the website, where needed i have use CSS and Media-Queries to make it fully responsive.
 
-
-
 ### Wireframes
 
 All drawings for the webistes can be found here
-[Wireframes](https://github.com/Mrsebastino/MS3-RecipeBook/tree/master/static/wireframes/), they include desktop, tablet and mobile.
+[Wireframes](https://github.com/Mrsebastino/MS3-RecipeBook/tree/master/static/wireframes/), they include desktop and mobile.
 
 ### Technologies Used
 #### Languages
@@ -63,28 +64,35 @@ All drawings for the webistes can be found here
 * MongoDB
 * Heroku
 ### Features
-For this project i have used Materialize instead of Bootstrap. I used Materializefor the NavBar, for both small and large screen. I have reused and adapted the footer from my last project.
+For this project i have used Materialize instead of Bootstrap. I used Materialize for the NavBar, for both small and large screen. I have reused and adapted the footer from my last project.
 
 In the Navbar there is three links, add recipe, our recipe(where you can view all recipes) and equipments(where you can view all equipments).
 
 In the future i would like to implement a secure login and password verification for users. So they can save on their page their favorite recipes.
 
-I would also like to promote the equipments in more interactive way, where equipments send you to recipes where you would need this particular piece of equipment and vice versa.
+I will also develop the equipment section. To make it an e-commerce.
 
 I also want to create a search bar where we can target recipe by category and diffilculty.
 
 ### Bug encountered
-Not a bug as such, more annoying, i normally use chrome but even with clearing my cache after each change in the CSS, it wouldn't always work. So switched to Firefox(awsome DevTolls).
+Not a bug as such, more annoying, i normally use chrome but even with clearing my cache after each change in the CSS, it wouldn't always work. So switched to Firefox(awsome DevTools).
 
-In my select form, i have had a problem with not being able to have it `required`. 
-In the `card-reveal` from materialize for the recipes, i am using a `<li>` inside it. But if i use the correct syntax, having my list inside a `<ol>` or `<ul>` i amm unble to use a bullet point, if i remove the `<u>` the bullet point appear.
+In my select form, i have had a problem with not being able to have it `required`. I have doen some research and it is an issue that has been raise to Materialize in 2017. It is apparently due to the fact 
+> that Materialize converts select elements into unorderd lists, which can be validated. To quote Kevin at tutor support.
 
-I had a strange bug withn my footer, it wouldn't stay at the bottom in all pages. It would work for the landing page, add recipe and our recipe but not equipment. Or if it work in equipment it would be in the middle of the other three pages. I tried `position:absolut  bottom:0  height:100px` and everything else i could find online. Finally with `bottom:0` and `padding-bottom:0` the footer finally sit properly on all pages.
+In the `card-reveal` from materialize for the recipes, i am using a `<li>`. But if i use the correct syntax, having my list inside a `<ol>` or `<ul>` i am uable to use a bullet point, if i remove the `<u>` the bullet point appear. It is again something to do Materialize.
+
+I had a strange bug with my footer, it wouldn't stay at the bottom in all pages. It would work for the **landing page**, **add recipe** and **our recipe** but not **equipment**. Or if it work in **equipment** it would be in the middle of the other three pages. I tried `position:absolut  bottom:0  height:100px` and everything else i could find online. Finally with `bottom:0` and `padding-bottom:0` the footer finally sit properly on all pages.
 ### Testing
+I have manually tested the app on Galasy S9, S8, A40.On Ipad 6
 ##### NavBar and Footer
 All link in the Navbar and footer were tested manually, they all redirect you to the right page or website.
 ##### Add Recipe
-I have added loads of recipe throuhgout the development, everthing work as it is intented. You are prompted to fill the empty fields.
+I have added loads of recipe throuhgout the development, everthing work as it is intented. You are prompted to fill the empty fields that are set as required,except the **Choose type of meal**, i explained in the bug section why. I set an image size restriction in CSS, to prevent malicious user to upload to big image. I uploaded a very large image, and it got resize as excpected. The **Add recipe** take the user to their page, which is intented to be developped in the future with password and login, to allow the user to save their favorites recipes. From there the **submit** take them to the main bank of recipes where they can view their recipe added to the page.
+##### Our Recipes
+I tested the **edit** and **delete** button. The **edit** take you to the edit form, where all populated fields are showing up allowing the user to edit the recipe and submit it back to the database. The **delete** is prompting the user before deleting the recipe, the user can then choose **cancel** if they changed their mind.
+##### Equipment
+The equipment page allow the user to view recipes where the equipment is needed. I have limited the number of recipes to 5. But in each recipe card the equipment is listed. Note that the user can't edit or delete the equipments list. The user can add or edit equipments from the list provided in the select form.
 ### Validators
 #### HTML5
 No error were found on the 
