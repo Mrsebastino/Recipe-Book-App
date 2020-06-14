@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
-from flask_pymongo import PyMongo, pymongo
+from flask import PyMongo
 from bson.objectid import ObjectId
 
 """ DB URI for local workspace
@@ -35,10 +35,10 @@ Route to  existing recipe and added recipe by user
 
 @app.route('/our_recipes')
 def our_recipes():
-    recipes = mongo.db.recipes.find()
+    all_recipes = mongo.db.recipes.find()
 
     return render_template("our_recipes.html",
-                           recipes=recipes,
+                           recipes=all_recipes,
                            )
 
 
@@ -50,14 +50,8 @@ def our_recipes():
 
 @app.route('/add_recipes')
 def add_recipes():
-    all_recipes = mongo.db.recipes.find()
-    all_categories = mongo.db.categories.find()
-    all_equipments = mongo.db.equipments.find()
 
     return render_template("add_recipes.html",
-                           recipes=all_recipes,
-                           categories=all_categories,
-                           equipments=all_equipments,
                            page_title="Add Recipe"
                            )
 
@@ -118,15 +112,9 @@ def insert_recipe():
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    all_recipes = mongo.db.recipes.find()
-    all_categories = mongo.db.categories.find()
-    all_equipments = mongo.db.equipments.find()
 
     return render_template("edit_recipes.html",
                            recipe=the_recipe,
-                           recipes=all_recipes,
-                           categories=all_categories,
-                           equipments=all_equipments,
                            page_title="Edit Recipe"
                            )
 
@@ -209,4 +197,4 @@ def recipes_by_equipment(equipment_name):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=False)
+            debug=True)
