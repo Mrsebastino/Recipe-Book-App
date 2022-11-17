@@ -19,7 +19,7 @@ The customer goals:
 ### Demo 
 ---
 Click here for a live Demo
-[Home Cooking](https://ms3-recipe-book.herokuapp.com/ "Home Cooking")
+[Home Cooking](https://recipe-book-qtme.onrender.com "Home Cooking")
 
 ### UX
 ---
