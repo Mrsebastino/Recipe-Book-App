@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
+from jinja2 import escape
 
 """ DB URI for local workspace
 """
