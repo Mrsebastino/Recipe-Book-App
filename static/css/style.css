@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Righteous:300,400,500,600,700|PT Mono:300,400,500");
 
 body {
-  background-color: #f6f098;
+  background-color: #f0e54c;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -14,7 +14,7 @@ main {
 /*NavBar*/
 
 .nav-wrapper {
-  background-color: #f5af2e;
+  background-color: #e4990d;
 }
 
 .material-icons {
