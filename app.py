@@ -207,6 +207,6 @@ def recipes_by_equipment(equipment_name):
 
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP', '0.0.0.0'),
-            port=int(os.environ.get('PORT', 8000)),
+    app.run(host=os.environ.get('IP'),
+            port=int(os.environ.get('PORT')),
             debug=False)
