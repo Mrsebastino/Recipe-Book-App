@@ -3,8 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 
-""" DB URI for local workspace
-"""
+# Import env.py to set environment variables
 from os import path
 if path.exists("env.py"):
     import env
