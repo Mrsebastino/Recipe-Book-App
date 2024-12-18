@@ -144,20 +144,22 @@ def update_recipe(recipe_id):
     ingredients_list = form_data["ingredients_name"].split("\n")
     instructions_list = form_data["instructions_name"].split("\n")
     equipments_list = equipments_use
-    recipes.update(
+    recipes.update_one(
         {"_id": ObjectId(recipe_id)},
 
         {
-            "category_name": form_data["category_name"],
-            "recipe_name": form_data["recipe_name"],
-            "difficulty_name": form_data["difficulty_name"],
-            "serve_name": form_data["serve_name"],
-            "ingredients_name": ingredients_list,
-            "instructions_name": instructions_list,
-            "equipment_name": equipments_list,
-            "image_link": form_data["image_link"]
-
-        })
+            "$set": {
+                "category_name": form_data["category_name"],
+                "recipe_name": form_data["recipe_name"],
+                "difficulty_name": form_data["difficulty_name"],
+                "serve_name": form_data["serve_name"],
+                "ingredients_name": ingredients_list,
+                "instructions_name": instructions_list,
+                "equipment_name": equipments_list,
+                "image_link": form_data["image_link"]
+            }
+        }
+    )
     return redirect(url_for("our_recipes",
                             recipe_id=recipe_id
                             ))
@@ -170,7 +172,7 @@ Route to delete selected recipe from DB
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    mongo.db.recipes.delete_one({'_id': ObjectId(recipe_id)})
     return redirect(url_for('our_recipes'))
 
 
